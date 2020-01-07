@@ -1,4 +1,4 @@
-﻿## 1_정규식 및 채점가능한 그룹:
+﻿## 1_Regex_and_ScorableGroups:
 예상 시간: 10-15분
 
 ## 봇 빌드
@@ -8,8 +8,8 @@ Bot Framework를 사용해본 경험이 있을 줄로 생각하는데, 그렇다
 ### 랩 1.1: 봇 개발 준비
 
 우리는 C# SDK를 사용하여 봇을 개발할 것입니다.  시작하려면 다음 두 가지가 필요합니다.
-1. [여기](http://aka.ms/bf-bc-vstemplate)에서 Bot Framework 프로젝트 템플릿을 다운로드합니다.  이 파일은 "Bot Application.zip"이라고 하며 \Documents\Visual Studio 2017\Templates\ProjectTemplates\Visual C#\ 디렉터리에 저장해야 합니다.  압축된 전체 파일을 이 디렉터리에 놓으면 되며, 압축을 풀 필요가 없습니다.  
-2. 로컬에서 봇을 테스트하도록 [여기](https://github.com/Microsoft/BotFramework-Emulator/releases/download/v3.5.33/botframework-emulator-Setup-3.5.33.exe)에서 Bot Framework Emulator를 다운로드합니다.  이 에뮬레이터는 브라우저에 따라 `c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.33\botframework-emulator.exe` 또는 Downloads 폴더에 설치됩니다.
+1. [여기](http://aka.ms/bf-bc-vstemplate)에서 Bot Framework 프로젝트 템플릿을 다운로드합니다. 이 파일은 "Bot Application.zip"이라고 하며 \Documents\Visual Studio 2019\Templates\ProjectTemplates\Visual C#\ 디렉터리에 저장해야 합니다.  압축된 전체 파일을 이 디렉터리에 놓으면 되며, 압축을 풀 필요가 없습니다.  
+2. 로컬에서 봇을 테스트하도록 [여기](https://github.com/Microsoft/BotFramework-Emulator/releases/download/v3.5.33/botframework-emulator-Setup-3.5.33.exe)에서 Bot Framework Emulator를 다운로드합니다.  이 에뮬레이터는 브라우저에 따라 'c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.33\botframework-emulator.exe' 또는 Downloads 폴더에 설치됩니다.
 
 ### 랩 1.2: 단순한 봇 만들기 및 실행
 
@@ -19,7 +19,7 @@ Visual Studio에서 파일 --> 새 프로젝트로 이동하여 "PictureBot"이�
 
 >**단순한 봇 만들기 및 실행** 랩의 나머지 부분은 선택 사항입니다. 전제 조건에 따라 Bot Framework를 사용한 경험이 있어야 합니다. F5 키를 눌러 올바르게 빌드된 것을 확인한 후 다음 랩으로 이동할 수 있습니다.
 
-메시지를 반복하고 문자 길이를 알려주는 에코 봇인 샘플 봇 코드를 살펴봅니다.  특히 다음 사항을 참고하십시오.
+메시지를 반복하고 문자 길이를 알려주는 에코 봇인 샘플 봇 코드를 살펴봅니다. 특히 다음 사항을 **참고** 하십시오.
 + App_Start 아래의 **WebApiConfig.cs** 에서 경로 템플릿은 api/{controller}/{id}(id는 선택 사항)입니다.  이 때문에 봇의 끝점을 호출할 때 항상 끝에 api/messages를 추가합니다.  
 + Controllers 아래의 **MessagesController.cs** 는 봇으로의 진입점입니다. 봇은 다양한 활동 유형에 응답할 수 있으며 메시지를 보내면 RootDialog가 호출됩니다.  
 + Dialogs 아래의 **RootDialog.cs** 에서 "StartAsync"는 사용자의 메시지를 기다리는 진입점이며, "MessageReceivedAsync"는 받은 메시지를 처리한 후 추가 메시지를 기다리는 메서드입니다.  "context.PostAsync"를 사용하여 봇에서 사용자에게 메시지를 다시 보낼 수 있습니다.  

@@ -27,8 +27,8 @@ Bot Framework 개발자 포털에서, 채널 목록에서 Direct Line을 사용�
 
 Direct Line API는 단일 봇에 직접 연결하기 위한 단순한 REST API입니다. 이 API는 개발자가 봇과 통신할 고유한 클라이언트 응용 프로그램, 웹 채팅 컨트롤 또는 모바일 앱을 작성하기 위한 것입니다. [Direct Line v3.0 Nuget 패키지](https://www.nuget.org/packages/Microsoft.Bot.Connector.DirectLine/3.0.0-beta)는 기본 REST API에 대한 액세스를 간소화합니다.
 
-Direct Line 채널에서의 각 대화는 `DirectLineClient.Conversations.StartConversationAsync`를 사용하여 명시적으로 시작해야 합니다.
-새로운 `DirectLineClient`를 만들고 새 대화를 시작하는 클라이언트의 [Program.cs](DirectLineClient/Program.cs#L25-L27) 클래스를 살펴보십시오.
+Direct Line 채널에서의 각 대화는 `DirectLineClient.Conversations.StartConversationAsync` 를 사용하여 명시적으로 시작해야 합니다.
+새로운 `DirectLineClient` 를 만들고 새 대화를 시작하는 클라이언트의 [Program.cs](DirectLineClient/Program.cs#L25-L27) 클래스를 살펴보십시오.
 
 
 ````C#
@@ -106,12 +106,12 @@ if (activity.Attachments != null)
 샘플을 실행하려면 봇과 클라이언트 앱을 모두 실행해야 합니다.
 * 봇 앱 실행
     1. Visual Studio 솔루션 탐색기 창에서 **DirectLineBot** 프로젝트를 마우스 오른쪽 단추로 클릭합니다.
-    2. 상황에 맞는 메뉴에서 디버그를 선택한 다음 새 인스턴스 시작을 선택하고 _웹 응용 프로그램_이 시작될 때까지 기다립니다.
+    2. 상황에 맞는 메뉴에서 디버그를 선택한 다음 새 인스턴스 시작을 선택하고 _웹 응용 프로그램_ 이 시작될 때까지 기다립니다.
 * 클라이언트 앱 실행
     1. Visual Studio 솔루션 탐색기 창에서 **DirectLineSampleClient** 프로젝트를 마우스 오른쪽 단추로 클릭합니다.
-    2. 상황에 맞는 메뉴에서 디버그를 선택한 다음 새 인스턴스 시작을 선택하고 _콘솔 응용 프로그램_이 시작될 때까지 기다립니다.
+    2. 상황에 맞는 메뉴에서 디버그를 선택한 다음 새 인스턴스 시작을 선택하고 _콘솔 응용 프로그램_ 이 시작될 때까지 기다립니다.
 
-첨부 파일 유형을 테스트하려면 `show me a hero card` 또는 `send me a botframework image`를 입력합니다. 그러면 다음과 같은 결과를 볼 수 있습니다.
+첨부 파일 유형을 테스트하려면 `show me a hero card` 또는 `send me a botframework image` 를 입력합니다. 그러면 다음과 같은 결과를 볼 수 있습니다.
 
 ![샘플 결과](images/outcome.png)
 

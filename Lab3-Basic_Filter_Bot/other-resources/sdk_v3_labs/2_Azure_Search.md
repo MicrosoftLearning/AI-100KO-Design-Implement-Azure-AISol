@@ -36,7 +36,7 @@ Visual Studio의 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 �
 
 방금 추가한 파일의 내용을 검토합니다. 동료와 함께 각 파일이 수행하는 작업을 이야기합니다.
 
-또한 SearchDialog를 호출하도록 RootDialog를 업데이트해야 합니다.  Dialogs 폴더의 RootDialog.cs에서 `ResumeAfterChoice` 메서드 바로 아래에 다음 "ResumeAfter" 메서드를 추가합니다.
+또한 SearchDialog를 호출하도록 RootDialog를 업데이트해야 합니다.  Dialogs 폴더의 RootDialog.cs에서 'ResumeAfterChoice' 메서드 바로 아래에 다음 "ResumeAfter" 메서드를 추가합니다.
 
 ```csharp
 
@@ -53,7 +53,7 @@ Visual Studio의 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 �
 
 ```
 
-RootDialog.cs에서 다음 줄의 주석(시작 부분의 `//`)도 제거해야 합니다. `PromptDialog.Text(context, ResumeAfterSearchTopicClarification, "What kind of picture do you want to search for?");` within the `ResumeAfterChoice` method.
+RootDialog.cs에서 다음 줄의 주석(시작 부분의 '//')도 제거해야 합니다. `ResumeAfterChoice` 메서드 내의 `PromptDialog.Text(context, ResumeAfterSearchTopicClarification, "What kind of picture do you want to search for?");`.
 
 F5 키를 눌러 봇을 다시 실행합니다.  Bot Emulator에서 "dogs" 또는 "water" 같은 것을 검색해 보십시오.  사진의 태그가 요청될 때 결과가 표시되는지 확인합니다.  
 

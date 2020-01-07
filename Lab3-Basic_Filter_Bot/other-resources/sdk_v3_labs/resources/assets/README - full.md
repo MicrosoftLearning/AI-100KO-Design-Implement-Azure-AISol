@@ -44,7 +44,7 @@ LUIS 및 Azure Search에 중점을 두고 있지만 다음 기술도 활용합�
 - [Face](https://www.microsoft.com/cognitive-services/ko-kr/face-api): 이를 통해 각 이미지에서 얼굴과 세부 사항을 인식합니다.
 - [Emotion](https://www.microsoft.com/cognitive-services/ko-kr/emotion-api): 이를 통해 이미지의 각 얼굴에서 감정 점수를 산출합니다.
 
-이러한 데이터가 확보되었으면 필요한 세부 정보를 끌어내어 Microsoft [NoSQL](https://en.wikipedia.org/wiki/NoSQL) [PaaS](https://azure.microsoft.com/ko-kr/overview/what-is-paas/) 제품인 [DocumentDB](https://azure.microsoft.com/ko-kr/services/documentdb/)에 저장합니다.
+이러한 데이터가 확보되었으면 필요한 세부 정보를 끌어내어 Microsoft [NoSQL](https://en.wikipedia.org/wiki/NoSQL) [PaaS](https://azure.microsoft.com/ko-kr/overview/what-is-paas/) 제품인 [DocumentDB](https://azure.microsoft.com/ko-kr/services/documentdb/) 에 저장합니다.
 
 DocumentDB에 데이터를 저장한 후 이를 기반으로 [Azure Search](https://azure.microsoft.com/ko-kr/services/search/) 인덱스를 빌드합니다. Azure Search는 내결함성 패싯 검색을 위한 PaaS 제품입니다. 관리 오버헤드가 없는 Elastic Search라고 생각할 수 있습니다. 데이터를 쿼리하는 방법을 설명한 후 데이터를 쿼리하는 [Bot Framework](https://dev.botframework.com/) 봇을 빌드하겠습니다. 마지막으로, 쿼리에서 의도를 자동으로 도출하고 이를 바탕으로 지능적으로 검색을 수행하도록 [LUIS](https://www.microsoft.com/cognitive-services/ko-kr/language-understanding-intelligent-service-luis)를 사용하여 이 봇을 확장하겠습니다. 
 
@@ -63,7 +63,7 @@ DocumentDB에 데이터를 저장한 후 이를 기반으로 [Azure Search](http
 		- **TestApp**: 이미지를 로드하고 이미지에 대한 다양한 Cognitive Services를 호출한 후 결과를 살펴볼 수 있도록 하는 UWP 응용 프로그램입니다. 이미지에 대한 실험 및 탐색에 유용합니다.
 		- **TestCLI**: 다양한 Cognitive Services를 호출한 다음 이미지와 데이터를 Azure에 업로드할 수 있는 콘솔 응용 프로그램입니다. 이미지는 Blob Storage에 업로드되고 다양한 메타데이터(태그, 캡션, 얼굴)가 Cosmos DB에 업로드됩니다.
 
-		_TestApp_ 및 _TestCLI_에는 Cognitive Services 및 Azure에 액세스하는 데 필요한 다양한 키와 끝점이 들어 있는 `settings.json` 파일이 포함됩니다. 이러한 디렉터리는 처음에 비어 있으므로 리소스를 프로비전한 후에 서비스 키를 가져오고 스토리지 계정 및 Cosmos DB 인스턴스를 설정해야 합니다.
+		_TestApp_ 및 _TestCLI_ 에는 Cognitive Services 및 Azure에 액세스하는 데 필요한 다양한 키와 끝점이 들어 있는 `settings.json` 파일이 포함됩니다. 이러한 디렉터리는 처음에 비어 있으므로 리소스를 프로비전한 후에 서비스 키를 가져오고 스토리지 계정 및 Cosmos DB 인스턴스를 설정해야 합니다.
 		
 	- **LUIS**: 여기서는 PictureBot의 LUIS 모델을 찾을 수 있습니다. 모델을 직접 만들지만 뒤처지거나 다른 LUIS 모델을 테스트하려는 경우 .json 파일을 사용하여 이 LUIS 앱을 가져올 수 있습니다.
 	- **Models**: 이러한 클래스는 PictureBot에 검색을 추가할 때 사용됩니다.
@@ -74,7 +74,7 @@ DocumentDB에 데이터를 저장한 후 이를 기반으로 [Azure Search](http
 
 [https://azure.microsoft.com/ko-kr/free/](https://azure.microsoft.com/ko-kr/free/)에서 Azure 무료 평가판을 활성화할 수 있습니다.  
 
-이 랩을 완료하기 위해 Azure Pass가 제공된 경우 [http://www.microsoftazurepass.com/](http://www.microsoftazurepass.com/)으로 이동하여 활성화할 수 있습니다.  활성화 프로세스를 안내하는 [https://www.microsoftazurepass.com/howto](https://www.microsoftazurepass.com/howto)의 지침을 따르십시오.  Microsoft 계정에는 Azure **무료 평가판 하나** 와 이에 연결된 Azure Pass 하나가 있을 수 있으므로, Microsoft 계정에서 Azure Pass를 이미 활성화한 경우 무료 평가판을 사용하거나 다른 Microsoft 계정을 사용해야 합니다.
+이 랩을 완료하기 위해 Azure Pass가 제공된 경우 [http://www.microsoftazurepass.com/](http://www.microsoftazurepass.com/)으로 이동하여 활성화할 수 있습니다. 활성화 프로세스를 안내하는 [https://www.microsoftazurepass.com/howto](https://www.microsoftazurepass.com/howto)의 지침을 따르십시오. Microsoft 계정에는 Azure **무료 평가판 하나** 와 이에 연결된 Azure Pass 하나가 있을 수 있으므로, Microsoft 계정에서 Azure Pass를 이미 활성화한 경우 무료 평가판을 사용하거나 다른 Microsoft 계정을 사용해야 합니다.
 
 ### 랩: Data Science Virtual Machine 설정
 
@@ -90,7 +90,7 @@ Azure 계정을 만든 후에는 [Azure Portal](https://portal.azure.com)에 액
 	- Cortana 검색 창에 "gpedit.msc"를 입력하고 Enter 키를 누릅니다. 다음 정책을 사용하도록 설정합니다. 컴퓨터 구성>Windows 설정>보안 설정>로컬 정책>보안 옵션>사용자 계정 컨트롤: 기본 제공 관리자 계정에 대한 관리자 승인 모드
 	- "키 수집" 랩을 시작합니다. 
 5. 설치가 완료되고 개발자 설정 및 사용자 계정 컨트롤 정책을 변경한 후 DSVM을 재부팅합니다. 
-> 참고: 워크샵이 끝난 후에는 요금이 부과되지 않도록 DSVM을 끄십시오.
+> **참고** 워크샵이 끝난 후에는 요금이 부과되지 않도록 DSVM을 끄십시오.
 
 
 ### 랩: 키 수집
@@ -116,21 +116,21 @@ Azure 계정을 만든 후에는 [Azure Portal](https://portal.azure.com)에 액
 
 ![Cognitive Services 키 만들기](./resources/assets/new-cognitive-services.PNG)
 
-다음으로, 만들 API 끝점에 대한 몇 가지 세부 정보를 작성하고 원하는 API와 끝점을 사용할 위치 그리고 요금제를 선택합니다. 자습서에 필요한 처리량을 위해 S1을 사용하여 새 _리소스 그룹_을 만듭니다. Blob Storage 및 Cosmos DB에도 이 리소스 그룹을 동일하게 사용하려고 합니다. 쉽게 찾을 수 있도록 _대시보드에 고정_합니다. Computer Vision API는 향후 Cognitive Services Vision 제품을 개선하기 위해 이미지를 Microsoft에 내부적으로 안전하게 저장하므로 계정 만들기를 _사용하도록 설정_해야 합니다. 구독 관리자만 이 기능을 사용하도록 설정할 수 있으므로 엔터프라이즈 환경의 사용자에게는 걸림돌이 될 수 있지만 Azure Pass 사용자에게는 문제가 되지 않습니다.
+다음으로, 만들 API 끝점에 대한 몇 가지 세부 정보를 작성하고 원하는 API와 끝점을 사용할 위치 그리고 요금제를 선택합니다. 자습서에 필요한 처리량을 위해 S1을 사용하여 새 _리소스 그룹_ 을 만듭니다. Blob Storage 및 Cosmos DB에도 이 리소스 그룹을 동일하게 사용하려고 합니다. 쉽게 찾을 수 있도록 _대시보드에 고정_ 합니다. Computer Vision API는 향후 Cognitive Services Vision 제품을 개선하기 위해 이미지를 Microsoft에 내부적으로 안전하게 저장하므로 계정 만들기를 _사용하도록 설정_ 해야 합니다. 구독 관리자만 이 기능을 사용하도록 설정할 수 있으므로 엔터프라이즈 환경의 사용자에게는 걸림돌이 될 수 있지만 Azure Pass 사용자에게는 문제가 되지 않습니다.
 
 ![Cognitive Services 세부 정보 선택](./resources/assets/cognitive-account-creation.PNG) 
 
-새 API 구독을 만든 후에는 블레이드의 해당 섹션에서 키를 가져와 _TestApp_ 및 _TestCLI_의 `settings.json` 파일에 추가할 수 있습니다.
+새 API 구독을 만든 후에는 블레이드의 해당 섹션에서 키를 가져와 _TestApp_ 및 _TestCLI_ 의 `settings.json` 파일에 추가할 수 있습니다.
 
 ![Cognitive API 키](./resources/assets/cognitive-keys.PNG)
 
-또한 Computer Vision 제품군 내 다른 API도 사용할 것이므로 이 기회에 _Emotion_ 및 _Face_ API를 위한 API 키를 만듭니다. 이러한 키는 위와 동일한 방식으로 만들어지며 아까 만든 것과 동일한 리소스 그룹을 재사용합니다. _대시보드에 고정_하고 `settings.json` 파일에 해당 키를 추가합니다.
+또한 Computer Vision 제품군 내 다른 API도 사용할 것이므로 이 기회에 _Emotion_ 및 _Face_ API를 위한 API 키를 만듭니다. 이러한 키는 위와 동일한 방식으로 만들어지며 아까 만든 것과 동일한 리소스 그룹을 재사용합니다. _대시보드에 고정_ 하고 `settings.json` 파일에 해당 키를 추가합니다.
 
-자습서의 뒷부분에서 [LUIS](https://www.microsoft.com/cognitive-services/ko-kr/language-understanding-intelligent-service-luis)를 사용하므로 이 기회에 LUIS 구독도 만들겠습니다. LUIS 구독은 위와 동일한 방식으로 만들어지지만 API 드롭다운에서 Language Understanding Intelligent Service를 선택하고 위에서 만든 것과 동일한 리소스 그룹을 재사용합니다. 자습서의 해당 단계에서 쉽게 찾을 수 있도록 이번에도 _대시보드에 고정_합니다.  
+자습서의 뒷부분에서 [LUIS](https://www.microsoft.com/cognitive-services/ko-kr/language-understanding-intelligent-service-luis)를 사용하므로 이 기회에 LUIS 구독도 만들겠습니다. LUIS 구독은 위와 동일한 방식으로 만들어지지만 API 드롭다운에서 Language Understanding Intelligent Service를 선택하고 위에서 만든 것과 동일한 리소스 그룹을 재사용합니다. 자습서의 해당 단계에서 쉽게 찾을 수 있도록 이번에도 _대시보드에 고정_ 합니다.  
 
 **저장소 설정**
 
-이 프로젝트에서는 Azure에 두 가지 저장소를 사용합니다. 원시 이미지를 저장하기 위한 저장소와 Cognitive Services 호출 결과를 저장하기 위한 저장소가 그것입니다. Azure Blob Storage는 파일 시스템과 유사한 형식으로 대량의 데이터를 저장하기 위해 만들어졌으며 이미지와 같은 데이터를 저장하기에 적합합니다. Azure Cosmos DB는 복원력 있는 NoSQL PaaS 솔루션으로, 이미지 메타데이터 결과와 같은 느슨하게 구조화된 데이터를 저장하는 데 매우 유용합니다. 다른 저장소(Azure Table Storage, SQL Server)를 선택할 수도 있지만, Cosmos DB는 스키마를 자유롭게 변경하고(예: 새 서비스를 위한 데이터 추가), 손쉽게 쿼리를 수행하고, Azure Search에 빠르게 통합할 수 있는 유연성을 제공합니다.
+이 프로젝트에서는 Azure에 두 가지 저장소를 사용합니다. 원시 이미지를 저장하기 위한 저장소와 Cognitive Services 호출 결과를 저장하기 위한 저장소가 그것입니다. Azure Blob Storage는 파일 시스템과 유사한 형식으로 대량의 데이터를 저장하기 위해 만들어졌으며 이미지 같은 데이터를 저장하기에 매우 적합합니다. Azure Cosmos DB는 복원력 있는 NoSQL PaaS 솔루션으로, 이미지 메타데이터 결과와 같은 느슨하게 구조화된 데이터를 저장하는 데 매우 유용합니다. 다른 저장소(Azure Table Storage, SQL Server)를 선택할 수도 있지만, Cosmos DB는 스키마를 자유롭게 변경하고(예: 새 서비스를 위한 데이터 추가), 손쉽게 쿼리를 수행하고, Azure Search에 빠르게 통합할 수 있는 유연성을 제공합니다.
 
 _Azure Blob Storage_
 
@@ -140,9 +140,9 @@ Azure Portal 내에서 **새로 만들기->저장소->스토리지 계정** 을 
 
 ![새 Azure Storage](./resources/assets/create-blob-storage.PNG)
 
-클릭하면 위의 필드가 작성을 위해 표시됩니다. 스토리지 계정 이름(소문자 및 숫자)을 선택하고, _계정 종류_를 _Blob Storage_로 설정하고, _복제_를 _LRS(로컬 중복 저장소)_(비용을 절감하기 위한 것임)로 설정하며, 위와 동일한 리소스 그룹을 사용하고, _위치_를 _미국 서부_로 설정합니다.  각 지역에서 사용할 수 있는 Azure 서비스 목록은 https://azure.microsoft.com/ko-kr/regions/services/에 나와 있습니다. 쉽게 찾을 수 있도록 _대시보드에 고정_합니다.
+클릭하면 위의 필드가 작성을 위해 표시됩니다. 스토리지 계정 이름(소문자 및 숫자)을 선택하고, _계정 종류_ 를 _Blob Storage_ 로 설정하고, _복제_ 를 _LRS(로컬 중복 저장소)_ (비용을 절감하기 위한 것임)로 설정하며, 위와 동일한 리소스 그룹을 사용하고, _위치_ 를 _미국 서부_ 로 설정합니다.  각 지역에서 사용할 수 있는 Azure 서비스 목록은 https://azure.microsoft.com/ko-kr/regions/services/에 나와 있습니다. 쉽게 찾을 수 있도록 _대시보드에 고정_ 합니다.
 
-이제 Azure Storage 계정이 있으므로 _연결 문자열_을 가져와서 _TestCLI_ 및 _TestApp_ `settings.json`에 추가하겠습니다.
+이제 Azure Storage 계정이 있으므로 _연결 문자열_ 을 가져와서 _TestCLI_ 및 _TestApp_ `settings.json` 에 추가하겠습니다.
 
 ![Azure Blob 키](./resources/assets/blob-storage-keys.PNG)
 
@@ -164,7 +164,7 @@ Azure Portal 내에서 **새로 만들기->데이터베이스->Azure Cosmos DB**
 
 ![Cosmos DB용 키 하위 패널](./resources/assets/docdb-keys.png)
 
-_TestCLI_의 `settings.json` 파일에 **URI** 및 **기본 키** 가 필요하므로 이를 파일에 복사합니다. 이제 클라우드에 이미지와 데이터를 저장할 수 있습니다.
+_TestCLI_ 의 `settings.json` 파일에 **URI** 및 **기본 키** 가 필요하므로 이를 파일에 복사합니다. 이제 클라우드에 이미지와 데이터를 저장할 수 있습니다.
 
 
 ## Cognitive Services
@@ -201,7 +201,7 @@ Cosmos DB는 이 워크샵의 초점이 아니지만, 관련 내용에 관심이
 
 이벤트 루프, 양식 또는 기타 UX 관련 사항으로 주의가 산만해지지 않고 처리 코드에 집중할 수 있도록 기본 처리 및 저장소 코드를 명령줄/콘솔 응용 프로그램으로 구현합니다. 나중에 고유한 UX를 추가해 보십시오.
 
-Cognitive Services API 키, Azure Blob Storage 연결 문자열 및 Cosmos DB 끝점 URI 및 키를 _TestCLI_의 `settings.json`에서 설정한 후에는 _TestCLI_를 실행할 수 있습니다.
+Cognitive Services API 키, Azure Blob Storage 연결 문자열 및 Cosmos DB 끝점 URI 및 키를 _TestCLI_ 의 `settings.json`에서 설정한 후에는 _TestCLI_ 를 실행할 수 있습니다.
 
 _TestCLI_를 실행한 다음 명령 프롬프트를 열고 ImageProcessing\TestCLI 폴더로 이동합니다(힌트: "cd" 명령을 사용하여 디렉터리 변경). 그런 다음 `.\bin\Debug\TestCLI.exe`를 입력합니다. 다음과 같은 결과를 얻어야 합니다.
 
@@ -216,11 +216,11 @@ _TestCLI_를 실행한 다음 명령 프롬프트를 열고 ImageProcessing\Test
     -query            실행할 쿼리
     -? | -h | --help  도움말 정보를 표시합니다.
 
-기본적으로 `settings.json`(`.exe`에 기본으로 포함됨)에서 설정이 로드되지만 `-settings` 플래그를 사용하여 고유한 설정을 제공할 수 있습니다. 이미지(및 Cognitive Services의 메타데이터)를 클라우드 저장소에 로드하려면 다음과 같이 _TestCLI_가 이미지 디렉터리를 `-process`하도록 지시할 수 있습니다.
+기본적으로 `settings.json`(`.exe` 에 기본으로 포함됨)에서 설정이 로드되지만 `-settings` 플래그를 사용하여 고유한 설정을 제공할 수 있습니다. 이미지(및 Cognitive Services의 메타데이터)를 클라우드 저장소에 로드하려면 다음과 같이 _TestCLI_ 가 이미지 디렉터리를 `-process` 하도록 지시할 수 있습니다.
 
     > .\bin\Debug\TestCLI.exe -process c:\my\image\directory
 
-처리가 완료되면 다음과 같이 _TestCLI_를 사용하여 Cosmos DB에 직접 쿼리할 수 있습니다.
+처리가 완료되면 다음과 같이 _TestCLI_ 를 사용하여 Cosmos DB에 직접 쿼리할 수 있습니다.
 
     > .\bin\Debug\TestCLI.exe -query "select * from images"
 
@@ -236,15 +236,15 @@ _TestCLI_를 실행한 다음 명령 프롬프트를 열고 ImageProcessing\Test
 
 위의 예는 사용자가 검색 환경에서 기대하는 일부 구성 요소를 보여 줍니다. [Azure Search](https://docs.microsoft.com/ko-kr/azure/search/search-what-is-azure-search)는 [모니터링 및 보고](https://docs.microsoft.com/ko-kr/azure/search/search-traffic-analytics), [간단한 점수 매기기](https://docs.microsoft.com/ko-kr/rest/api/searchservice/add-scoring-profiles-to-a-search-index) 그리고 [프로토타이핑](https://docs.microsoft.com/ko-kr/azure/search/search-import-data-portal) 및 [검사](https://docs.microsoft.com/ko-kr/azure/search/search-explorer) 도구를 제공하며 이러한 사용자 환경 기능을 구현할 수 있습니다.
 
-일반적인 워크플로우:
+일반적인 워크플로:
 1. 서비스 프로비전
-	- [포털](https://docs.microsoft.com/ko-kr/azure/search/search-create-service-portal) 또는 [PowerShell](https://docs.microsoft.com/ko-kr/azure/search/search-manage-powershell)을 사용하여 Azure Search 서비스를 만들거나 프로비전할 수 있습니다.
+	- [포털](https://docs.microsoft.com/ko-kr/azure/search/search-create-service-portal) 또는 [PowerShell](https://docs.microsoft.com/ko-kr/azure/search/search-manage-powershell) 을 사용하여 Azure Search 서비스를 만들거나 프로비전할 수 있습니다.
 2. 인덱스 만들기
 	- [인덱스](https://docs.microsoft.com/ko-kr/azure/search/search-what-is-an-index)는 데이터, 인지 "테이블"을 위한 컨테이너이며, 스키마, [CORS 옵션](https://docs.microsoft.com/ko-kr/aspnet/core/security/cors), 검색 옵션을 갖습니다. [포털](https://docs.microsoft.com/ko-kr/azure/search/search-create-index-portal)에서 또는 [앱 초기화](https://docs.microsoft.com/ko-kr/azure/search/search-create-index-dotnet) 중에 인덱스를 만들 수 있습니다. 
 3. 인덱스 데이터
-	- [데이터로 인덱스를 채우는](https://docs.microsoft.com/ko-kr/azure/search/search-what-is-data-import) 방법에는 두 가지가 있습니다. 첫 번째 방법은 Azure Search [REST API](https://docs.microsoft.com/ko-kr/azure/search/search-import-data-rest-api) 또는 [.NET SDK](https://docs.microsoft.com/ko-kr/azure/search/search-import-data-dotnet)를 사용하여 데이터를 인덱스에 수동으로 푸시하는 것입니다. 두 번째 방법은 [지원되는 데이터 원본](https://docs.microsoft.com/ko-kr/azure/search/search-indexer-overview)에서 인덱스를 가리키고 Azure Search가 일정에 따라 데이터를 자동으로 가져오도록 하는 것입니다.
+	- [데이터로 인덱스를 채우는](https://docs.microsoft.com/ko-kr/azure/search/search-what-is-data-import) 방법에는 두 가지가 있습니다. 첫 번째 방법은 Azure Search [REST API](https://docs.microsoft.com/ko-kr/azure/search/search-import-data-rest-api) 또는 [.NET SDK](https://docs.microsoft.com/ko-kr/azure/search/search-import-data-dotnet)를 사용하여 데이터를 인덱스에 수동으로 푸시하는 것입니다. 두 번째 방법은 [지원되는 데이터 원본](https://docs.microsoft.com/ko-kr/azure/search/search-indexer-overview) 에서 인덱스를 가리키고 Azure Search가 일정에 따라 데이터를 자동으로 가져오도록 하는 것입니다.
 4. 인덱스 검색
-	- Azure Search에 검색 요청을 제출할 때 간단한 검색 옵션을 사용할 수 있으며 [필터링](https://docs.microsoft.com/ko-kr/azure/search/search-filters), [정렬](https://docs.microsoft.com/ko-kr/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [예측](https://docs.microsoft.com/ko-kr/azure/search/search-faceted-navigation) 및 [여러 페이지에 결과 표시](https://docs.microsoft.com/ko-kr/azure/search/search-pagination-page-layout) 기능을 사용할 수 있습니다. 맞춤법 오류, 음성 및 Regex를 처리할 수 있으며 검색 및 [제안](https://docs.microsoft.com/ko-kr/rest/api/searchservice/suggesters) 작업을 위한 옵션이 있습니다. 이러한 쿼리 매개 변수를 사용하면 [전체 텍스트 검색 환경](https://docs.microsoft.com/ko-kr/azure/search/search-query-overview)을 보다 세부적으로 제어할 수 있습니다.
+	- Azure Search에 검색 요청을 제출할 때 간단한 검색 옵션을 사용할 수 있으며 [필터링](https://docs.microsoft.com/ko-kr/azure/search/search-filters), [정렬](https://docs.microsoft.com/ko-kr/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [예측](https://docs.microsoft.com/ko-kr/azure/search/search-faceted-navigation) 및 [여러 페이지에 결과 표시](https://docs.microsoft.com/ko-kr/azure/search/search-pagination-page-layout) 기능을 사용할 수 있습니다. 맞춤법 오류, 음성 및 Regex를 처리할 수 있으며 검색 및 [제안](https://docs.microsoft.com/ko-kr/rest/api/searchservice/suggesters) 작업을 위한 옵션이 있습니다. 이러한 쿼리 매개 변수를 사용하면 [전체 텍스트 검색 환경](https://docs.microsoft.com/ko-kr/azure/search/search-query-overview) 을 보다 세부적으로 제어할 수 있습니다.
 
 
 ### 랩: Azure Search 서비스 만들기
@@ -259,7 +259,7 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 
 ### 랩: Azure Search 인덱스 만들기
 
-인덱스는 데이터의 컨테이너이며 SQL Server 테이블의 컨테이너와 유사한 개념입니다.  테이블에 행이 있는 것처럼 인덱스에는 문서가 있습니다.  필드가 있는 테이블과 마찬가지로 인덱스에는 필드가 있습니다.  이러한 필드에는 전체 텍스트 검색이 가능한지 또는 필터링이 가능한지 등을 알려주는 속성이 있을 수 있습니다.  프로그래밍 방식으로 [콘텐츠를 푸시](https://docs.microsoft.com/ko-kr/rest/api/searchservice/addupdate-or-delete-documents)하거나 [Azure Search Indexer](https://docs.microsoft.com/ko-kr/azure/search/search-indexer-overview)(공통 데이터 저장소 크롤링 가능)를 사용하여 Azure Search에 콘텐츠를 채울 수 있습니다.
+인덱스는 데이터의 컨테이너이며 SQL Server 테이블의 인덱스와 유사한 개념입니다.  테이블에 행이 있는 것처럼 인덱스에는 문서가 있습니다.  테이블에 필드가 있는 것처럼 인덱스에도 필드가 있습니다.  이러한 필드에는 전체 텍스트 검색이 가능한지 또는 필터링이 가능한지 등을 알려주는 속성이 있을 수 있습니다.  프로그래밍 방식으로 [콘텐츠를 푸시](https://docs.microsoft.com/ko-kr/rest/api/searchservice/addupdate-or-delete-documents)하거나 [Azure Search Indexer](https://docs.microsoft.com/ko-kr/azure/search/search-indexer-overview) (공통 데이터 저장소 크롤링 가능)를 사용하여 Azure Search에 콘텐츠를 채울 수 있습니다.
 
 이 랩에서는 [Cosmos DB용 Azure Search Indexer](https://docs.microsoft.com/ko-kr/azure/search/search-howto-index-documentdb)를 사용하여 Cosmos DB 컨테이너의 데이터를 크롤링합니다. 
 
@@ -279,9 +279,9 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 
 키를 **id**(각 문서를 고유하게 식별)로 업데이트
 
-모든 필드를 **Retrievable** 로 설정(검색 시 클라이언트가 이러한 필드를 검색할 수 있음)
+모든 필드를 **Retrievable**로 설정(검색 시 클라이언트가 이러한 필드를 검색할 수 있음)
 
-**Tags, NumFaces 및 Faces** 필드를 **Filterable** 로 설정(클라이언트가 이러한 값을 기반으로 결과를 필터링할 수 있음)
+**Tags, NumFaces 및 Faces** 필드를 **Filterable**로 설정(클라이언트가 이러한 값을 기반으로 결과를 필터링할 수 있음)
 
 **NumFaces** 필드를 **Sortable** 로 설정(클라이언트가 이미지의 얼굴 수에 따라 결과를 정렬할 수 있음)
 
@@ -325,7 +325,7 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 
 **일찍 끝났다면 이 추가 크레딧 랩을 사용해 보십시오.**
 
-[Postman](https://www.getpostman.com/)은 Azure Search REST API 호출을 쉽게 실행할 수 있게 해주는 유용한 도구이자 훌륭한 디버깅 도구입니다.  Azure Search Explorer에서 모든 쿼리를 가져가서 Azure Search API 키와 함께 Postman 내에서 실행할 수 있습니다.
+[Postman](https://www.getpostman.com/)은 Azure Search REST API 호출을 쉽게 실행할 수 있게 해주는 유용한 도구이자 훌륭한 디버깅 도구입니다. Azure Search Explorer에서 모든 쿼리를 가져가서 Azure Search API 키와 함께 Postman 내에서 실행할 수 있습니다.
 
 [Postman](https://www.getpostman.com/) 도구를 다운로드하여 설치합니다. 
 
@@ -338,16 +338,16 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 
 보내기를 선택하면 JSON 형식의 데이터가 표시됩니다.
 
-[이와 같은 예제](https://docs.microsoft.com/ko-kr/rest/api/searchservice/search-documents#a-namebkmkexamplesa-examples)를 사용하여 다른 검색을 수행해 보십시오.
+[이와 같은 예제](https://docs.microsoft.com/ko-kr/rest/api/searchservice/search-documents#a-namebkmkexamplesa-examples) 를 사용하여 다른 검색을 수행해 보십시오.
 
 
 ## LUIS
 
 먼저, [LUIS(Language Understand Intelligent Service)에 대해 알아보겠습니다](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/Home).
 
-이제 LUIS가 무엇인지 알았으므로 LUIS 앱을 계획할 수 있습니다. 검색 결과를 기반으로 이미지를 반환하고 사용자가 공유하거나 주문할 수 있도록 하는 봇을 만들려고 합니다. 봇이 수행할 수 있는 다양한 작업을 트리거하는 의도를 만든 다음 해당 작업을 실행하는 데 필요한 일부 매개 변수를 모델링하는 엔터티를 만들어야 합니다. 예를 들어, PictureBot의 의도는 "SearchPics"일 수 있으며, 이는 검색 서비스를 트리거하여 사진을 검색하는 것이므로 검색할 내용을 파악하는 "패싯" 엔터티가 필요합니다. [여기](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/plan-your-app)에서 앱을 계획하기 위한 더 많은 예제를 볼 수 있습니다.
+이제 LUIS가 무엇인지 알았으므로 LUIS 앱을 계획할 수 있습니다. 검색 결과를 기반으로 이미지를 반환하고 사용자가 공유하거나 주문할 수 있도록 하는 봇을 만들려고 합니다. 봇이 수행할 수 있는 다양한 작업을 트리거하는 의도를 만든 다음 해당 작업을 실행하는 데 필요한 일부 매개 변수를 모델링하는 엔터티를 만들어야 합니다. 예를 들어, PictureBot의 의도는 "SearchPics"일 수 있으며, 이는 검색 서비스를 트리거하여 사진을 검색하는 것이므로 검색할 내용을 파악하는 "패싯" 엔터티가 필요합니다. [여기](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/plan-your-app) 에서 앱을 계획하기 위한 더 많은 예제를 볼 수 있습니다.
 
-앱을 계획했으면 [앱을 빌드하고 학습](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/luis-get-started-create-app)시킬 수 있습니다. LUIS 응용 프로그램을 만들 때 일반적으로 수행해야 하는 단계는 다음과 같습니다.
+앱을 계획했으면 [앱을 빌드하고 학습](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/luis-get-started-create-app) 시킬 수 있습니다. LUIS 애플리케이션을 만들 때 일반적으로 수행해야 하는 단계는 다음과 같습니다.
   1. [의도 추가](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/add-intents) 
   2. [발화 추가](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/add-example-utterances)
   3. [엔터티 추가](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/add-entities)
@@ -362,11 +362,11 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 
 다음 랩에서는 PictureBot을 만듭니다. 먼저 LUIS를 사용하여 자연어 기능을 추가하는 방법을 살펴보겠습니다. LUIS를 사용하면 자연어 발화를 의도에 매핑할 수 있습니다.  우리의 응용 프로그램에는 몇 가지 의도가 있을 수 있습니다. 사진 찾기, 사진 공유, 사진 인쇄물 주문 등을 예로 들 수 있습니다.  이러한 각 항목을 요청하는 방안으로 몇 가지 예제 발화를 제공할 수 있으며, LUIS는 학습한 내용을 바탕으로 각 의도에 새 추가 발화를 매핑합니다.  
 
-[https://www.luis.ai](https://www.luis.ai)로 이동하여 Microsoft 계정으로 로그인합니다.  이 랩의 시작 부분에서 Cognitive Services 키를 만드는 데 사용한 계정과 동일해야 합니다.  [https://www.luis.ai/applications](https://www.luis.ai/applications)의 LUIS 응용 프로그램 목록으로 리디렉션됩니다.  봇을 지원하는 새로운 LUIS 앱을 만들 것입니다.  
+[https://www.luis.ai](https://www.luis.ai) 로 이동하여 Microsoft 계정으로 로그인합니다.  이 랩의 시작 부분에서 Cognitive Services 키를 만드는 데 사용한 계정과 동일해야 합니다.  [https://www.luis.ai/applications](https://www.luis.ai/applications)의 LUIS 응용 프로그램 목록으로 리디렉션됩니다.  봇을 지원하는 새로운 LUIS 앱을 만들 것입니다.  
 
 > 참고: [현재 페이지](https://www.luis.ai/applications)의 "새 앱" 단추 옆에 "앱 가져오기"도 있습니다.  LUIS 응용 프로그램을 만든 후 전체 앱을 JSON으로 내보내고 소스 제어에 체크 인할 수 있습니다.  이는 코드의 버전을 관리할 때 LUIS 모델의 버전을 관리할 수 있도록 권장되는 모범 사례입니다.  내보낸 LUIS 앱은 "앱 가져오기" 단추를 사용하여 다시 가져올 수 있습니다.  랩 중에 뒤처져서 쉬운 방법을 사용하려면 "앱 가져오기" 단추를 클릭하여 [LUIS 모델](./resources/code/LUIS/PictureBotLuisModel.json)을 가져올 수 있습니다.  
 
-[https://www.luis.ai/applications](https://www.luis.ai/applications)에서 "새 앱" 단추를 클릭합니다.  이름을 지정하고(예로 "PictureBotLuisModel"을 선택함) 문화권을 "영어"로 설정합니다.  선택적으로 설명을 제공할 수 있습니다.  드롭다운을 클릭하여 사용할 끝점 키를 선택하고 워크샵 시작 시 Azure Portal에서 만든 LUIS 키가 있는 경우 해당 키를 선택합니다. 앱을 게시할 때까지 이 옵션이 나타나지 않을 수 있으므로 표시되지 않더라도 걱정하지 마십시오.  그런 다음 "만들기"를 클릭합니다.  
+[https://www.luis.ai/applications](https://www.luis.ai/applications) 에서 "새 앱" 단추를 클릭합니다.  이름을 지정하고(예로 "PictureBotLuisModel"을 선택함) 문화권을 "영어"로 설정합니다.  선택적으로 설명을 제공할 수 있습니다.  드롭다운을 클릭하여 사용할 끝점 키를 선택하고 워크샵 시작 시 Azure Portal에서 만든 LUIS 키가 있는 경우 해당 키를 선택합니다. 앱을 게시할 때까지 이 옵션이 나타나지 않을 수 있으므로 표시되지 않더라도 걱정하지 마십시오.  그런 다음 "만들기"를 클릭합니다.  
 
 ![LUIS 새 앱](./resources/assets/LuisNewApp.jpg) 
 
@@ -423,8 +423,8 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 완료되면 "저장"을 클릭하는 것을 잊지 마십시오!  
 
 마지막으로 왼쪽 사이드바에서 "의도"를 클릭하고 다음 두 가지 의도를 추가합니다.
-+ 한 의도의 이름을 **"SharePic"** 으로 지정합니다.  이는 "이 사진을 공유해 주세요", "트윗해 줄래요?" 또는 "트위터에 게시해 주세요"와 같은 발화로 식별될 수 있습니다.  
-+ **"OrderPic"** 이라는 다른 의도를 만듭니다.  이는 "이 사진을 인쇄해 주세요", "인쇄물을 주문하고 싶습니다", "그 중 8x10을 얻을 수 있을까요?", "지갑을 주문해 주세요"와 같은 발화로 전달될 수 있습니다.  
++ 한 의도의 이름을 **"SharePic"* *으로 지정합니다.  이는 "이 사진을 공유해 주세요", "트윗해 줄래요?" 또는 "트위터에 게시해 주세요"와 같은 발화로 식별될 수 있습니다.  
++ **"OrderPic"**이라는 다른 의도를 만듭니다.  이는 "이 사진을 인쇄해 주세요", "인쇄물을 주문하고 싶습니다", "그 중 8x10을 얻을 수 있을까요?", "지갑을 주문해 주세요"와 같은 발화로 전달될 수 있습니다.  
 발화를 선택할 때 질문, 지시, "~하고 싶어요..." 형식을 조합하여 사용하는 것이 유용할 수 있습니다.  
 
 "None"이라는 의도도 있습니다.  의도에 매핑되지 않는 임의의 발화는 "None"에 매핑될 수 있습니다.  "땅콩 버터와 젤리를 좋아하나요?"와 같은 몇 가지 발화로 시작해도 좋습니다.
@@ -450,17 +450,17 @@ Azure Portal 내에서 **새로 만들기->웹 + 모바일->Azure Search** 를 �
 
 ![목록을 사용한 사용자 지정 감정 엔터티](./resources/assets/CustomEmotionEntityWithList.jpg) 
 
-> 참고: 엔터티 또는 기능을 더 추가하는 경우 `의도>발화`로 이동하여 추가한 엔터티와 함께 더 많은 발화를 확인/추가할 뿐 아니라 모델을 다시 학습시키고 게시해야 합니다.
+> **참고** 엔터티 또는 기능을 더 추가하는 경우 `의도>발화` 로 이동하여 추가한 엔터티와 함께 더 많은 발화를 확인/추가할 뿐 아니라 모델을 다시 학습시키고 게시해야 합니다.
 
 ## 봇 빌드
 
-Bot Framework를 사용해본 경험이 있을 줄로 생각하는데, 그렇다면 잘 된 일이고 그렇지 않더라도 너무 염려할 필요 없습니다. 이 섹션에서 많은 것을 배울 수 있습니다. [이 Microsoft Virtual Academy 과정](https://mva.microsoft.com/ko-kr/training-courses/creating-bots-in-the-microsoft-bot-framework-using-c-17590#!)을 이수하고 [설명서](https://docs.microsoft.com/ko-kr/bot-framework/)를 살펴보시기 바랍니다.
+Bot Framework를 사용해본 경험이 있을 줄로 생각하는데, 그렇다면 잘 된 일이고 그렇지 않더라도 너무 염려할 필요 없습니다. 이 섹션에서 많은 것을 배울 수 있습니다. [이 Microsoft Virtual Academy 과정](https://mva.microsoft.com/ko-kr/training-courses/creating-bots-in-the-microsoft-bot-framework-using-c-17590#!)을 이수하고 [설명서](https://docs.microsoft.com/ko-kr/bot-framework/) 를 살펴보시기 바랍니다.
 
 ### 랩: 봇 개발 준비
 
 우리는 C# SDK를 사용하여 봇을 개발할 것입니다.  시작하려면 다음 두 가지가 필요합니다.
-1. [여기](https://aka.ms/bf-bc-vstemplate)에서 Bot Framework 프로젝트 템플릿을 다운로드합니다.  이 파일은 "Bot Application.zip"이라고 하며 \Documents\Visual Studio 2017\Templates\ProjectTemplates\Visual C#\ 디렉터리에 저장해야 합니다.  압축된 전체 파일을 이 디렉터리에 놓으면 되며, 압축을 풀 필요가 없습니다.  
-2. 로컬에서 봇을 테스트하도록 [여기](https://emulator.botframework.com/)에서 Bot Framework Emulator를 다운로드합니다.  이 에뮬레이터는 `c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.27\botframework-emulator.exe`에 설치됩니다. 
+1. [여기](https://aka.ms/bf-bc-vstemplate) 에서 Bot Framework 프로젝트 템플릿을 다운로드합니다.  이 파일은 "Bot Application.zip"이라고 하며 \Documents\Visual Studio 2019\Templates\ProjectTemplates\Visual C#\ 디렉터리에 저장해야 합니다.  압축된 전체 파일을 이 디렉터리에 놓으면 되며, 압축을 풀 필요가 없습니다.  
+2. 로컬에서 봇을 테스트하도록 [여기](https://emulator.botframework.com/)에서 Bot Framework Emulator를 다운로드합니다. 이 에뮬레이터는 `c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.27\botframework-emulator.exe` 에 설치됩니다. 
 
 ### 랩: 단순한 봇 만들기 및 실행
 
@@ -468,7 +468,7 @@ Visual Studio에서 파일 --> 새 프로젝트로 이동하여 "PictureBot"이�
 
 ![새로운 봇 응용 프로그램](./resources/assets/NewBotApplication.jpg) 
 
-메시지를 반복하고 문자 길이를 알려주는 에코 봇인 샘플 봇 코드를 살펴봅니다.  특히 다음 사항을 참고하십시오.
+메시지를 반복하고 문자 길이를 알려주는 에코 봇인 샘플 봇 코드를 살펴봅니다.  특히 다음 사항을 **참고** 하십시오.
 + App_Start 아래의 **WebApiConfig.cs** 에서 경로 템플릿은 api/{controller}/{id}(id는 선택 사항)입니다.  이 때문에 봇의 끝점을 호출할 때 항상 끝에 api/messages를 추가합니다.  
 + Controllers 아래의 **MessagesController.cs** 는 봇으로의 진입점입니다. 봇은 다양한 활동 유형에 응답할 수 있으며 메시지를 보내면 RootDialog가 호출됩니다.  
 + Dialogs 아래의 **RootDialog.cs** 에서 "StartAsync"는 사용자의 메시지를 기다리는 진입점이며, "MessageReceivedAsync"는 받은 메시지를 처리한 후 추가 메시지를 기다리는 메서드입니다.  "context.PostAsync"를 사용하여 봇에서 사용자에게 메시지를 다시 보낼 수 있습니다.  
@@ -477,7 +477,7 @@ Visual Studio에서 파일 --> 새 프로젝트로 이동하여 "PictureBot"이�
 
 F5 키를 클릭하여 샘플 코드를 실행합니다.  적절한 종속 항목을 다운로드하는 것은 NuGet을 통해 처리됩니다.  
 
-코드는 기본 웹 브라우저를 사용하여 http://localhost:3979/와 유사한 URL에서 시작됩니다.  
+코드는 기본 웹 브라우저를 사용하여 http://localhost:3979/ 와 유사한 URL에서 시작됩니다.  
 
 > 참고: 왜 이 포트 번호를 사용할까요?  이는 프로젝트 속성에서 설정됩니다.  솔루션 탐색기에서 "속성"을 두 번 클릭하고 "웹" 탭을 선택합니다.  프로젝트 URL은 "서버" 섹션에 설정되어 있습니다.  
 
@@ -489,7 +489,7 @@ F5 키를 클릭하여 샘플 코드를 실행합니다.  적절한 종속 항�
 
 ### 랩: LUIS를 사용하도록 봇 업데이트
 
-이제 LUIS를 사용하도록 봇을 업데이트하려고 합니다.  [LuisDialog 클래스](https://docs.botframework.com/ko-kr/csharp/builder/sdkreference/d8/df9/class_microsoft_1_1_bot_1_1_builder_1_1_dialogs_1_1_luis_dialog.html)를 사용하여 이 작업을 수행할 수 있습니다.  
+이제 LUIS를 사용하도록 봇을 업데이트하려고 합니다.  [LuisDialog 클래스](https://docs.botframework.com/ko-kr/csharp/builder/sdkreference/d8/df9/class_microsoft_1_1_bot_1_1_builder_1_1_dialogs_1_1_luis_dialog.html) 를 사용하여 이 작업을 수행할 수 있습니다.  
 
 **RootDialog.cs** 파일에서 다음 네임스페이스에 참조를 추가합니다.
 
@@ -500,7 +500,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 
 ```
 
-다음으로, RootDialog 클래스가 IDialog<object>가 아닌 LuisDialog<object>에서 파생되도록 변경합니다.  그런 다음 LUIS 앱 ID 및 LUIS 키를 사용하여 이 클래스에 LuisModel 특성을 지정합니다.  (힌트: LUIS 앱 ID에는 하이픈이 있으며 LUIS 키에는 없습니다.  이러한 값을 찾을 수 없는 경우 http://luis.ai로 돌아가서  응용 프로그램을 클릭하면 앱 ID가 대시보드 페이지와 URL에 바로 표시됩니다.  그런 다음 [상단 사이드바에서 "내 키"](https://www.luis.ai/home/keys)를 클릭하여 목록에서 끝점 키를 찾습니다.  
+다음으로, RootDialog 클래스가 IDialog<object>가 아닌 LuisDialog<object>에서 파생되도록 변경합니다.  그런 다음 LUIS 앱 ID 및 LUIS 키를 사용하여 이 클래스에 LuisModel 특성을 지정합니다.  (힌트: LUIS 앱 ID에는 하이픈이 있으며 LUIS 키에는 없습니다.  이러한 값을 찾을 수 없는 경우 http://luis.ai로 돌아가서  애플리케이션을 클릭하면 앱 ID가 대시보드 페이지와 URL에 바로 표시됩니다.  그런 다음 [상단 사이드바에서 "내 키"](https://www.luis.ai/home/keys) 를 클릭하여 목록에서 끝점 키를 찾습니다.  
 
 ```csharp
 
@@ -565,7 +565,7 @@ namespace PictureBot.Dialogs
 
 ![봇 테스트 LUIS](./resources/assets/BotTestLuis.jpg) 
 
-위의 스크린샷에서 봇에 "인쇄물 주문"이라고 말했을 때 다른 응답을 받을 것으로 예상했습니다. "OrderPic" 의도 대신 "SearchPics" 의도에 매핑된 것 같습니다.  http://luis.ai로 돌아가서 LUIS 모델을 업데이트할 수 있습니다.  해당 응용 프로그램을 클릭한 다음 왼쪽 사이드바에서 "의도"를 클릭합니다.  수동으로 새 발화로 이를 추가하거나 LUIS의 "발화 제안" 기능을 활용하여 모델을 개선할 수 있습니다.  "SearchPics" 의도(또는 발화 레이블이 잘못 지정된 의도)를 클릭한 다음 "발화 제안"을 클릭합니다.  레이블이 잘못 지정된 발화의 확인란을 클릭한 다음 "의도 재할당"을 클릭하고 올바른 의도를 선택합니다.  
+위의 스크린샷에서 봇에 "인쇄물 주문"이라고 말했을 때 다른 응답을 받을 것으로 예상했습니다. "OrderPic" 의도 대신 "SearchPics" 의도에 매핑된 것 같습니다.  http://luis.ai 로 돌아가서 LUIS 모델을 업데이트할 수 있습니다.  해당 응용 프로그램을 클릭한 다음 왼쪽 사이드바에서 "의도"를 클릭합니다. 수동으로 새 발화로 이를 추가하거나 LUIS의 "발화 제안" 기능을 활용하여 모델을 개선할 수 있습니다. "SearchPics" 의도(또는 발화 레이블이 잘못 지정된 의도)를 클릭한 다음 "발화 제안"을 클릭합니다.  레이블이 잘못 지정된 발화의 확인란을 클릭한 다음 "의도 재할당"을 클릭하고 올바른 의도를 선택합니다.  
 
 ![LUIS 의도 재할당](./resources/assets/LuisReassignIntent.jpg) 
 
@@ -588,7 +588,7 @@ Web.config를 열고 appSettings 섹션에서 다음을 추가합니다.
     <add key="SearchDialogsIndexName" value="images" />
 ```
 
-SearchDialogsServiceName의 값을 앞에서 만든 Azure Search 서비스의 이름으로 설정합니다.  필요한 경우 [Azure Portal](https://portal.azure.com)로 돌아가서 이를 확인합니다.  
+SearchDialogsServiceName의 값을 앞에서 만든 Azure Search 서비스의 이름으로 설정합니다. 필요한 경우 [Azure Portal](https://portal.azure.com) 로 돌아가서 이를 확인합니다.  
 
 SearchDialogsServiceKey의 값을 이 서비스의 키로 설정합니다.  이 값은 [Azure Portal](https://portal.azure.com)의 Azure Search 키 섹션 아래에서 찾을 수 있습니다.  아래 스크린샷에서 SearchDialogsServiceName은 "aiimmersionsearch"이고 SearchDialogsServiceKey는 "375..."입니다.  
 
@@ -596,7 +596,7 @@ SearchDialogsServiceKey의 값을 이 서비스의 키로 설정합니다.  이 
 
 ### 랩: Azure Search를 사용하도록 봇 업데이트
 
-이제 Azure Search를 호출하도록 봇을 업데이트하겠습니다.  먼저 도구-->NuGet Package Manager-->솔루션용 NuGet 패키지 관리를 선택합니다.  검색 상자에 "Microsoft.Azure.Search"를 입력합니다.  해당 라이브러리를 선택하고 프로젝트를 나타내는 확인란을 선택한 후 설치합니다.  다른 종속성 항목도 설치할 수 있습니다. 설치된 패키지에서 "Newtonsoft.Json" 패키지도 업데이트해야 할 수 있습니다.
+이제 Azure Search를 호출하도록 봇을 업데이트하겠습니다. 먼저 도구-->NuGet Package Manager-->솔루션용 NuGet 패키지 관리를 선택합니다. 검색 상자에 "Microsoft.Azure.Search"를 입력합니다. 해당 라이브러리를 선택하고 프로젝트를 나타내는 확인란을 선택한 후 설치합니다.  다른 종속성 항목도 설치할 수 있습니다. 설치된 패키지에서 "Newtonsoft.Json" 패키지도 업데이트해야 할 수 있습니다.
 
 ![Azure Search NuGet](./resources/assets/AzureSearchNuGet.jpg) 
 
@@ -719,11 +719,11 @@ using System.Collections.Generic;
 
 이 코드는 "안녕하세요", "안녕하십니까"및 "도움말"로 시작하는 사용자의 표현과 일치시킵니다.  그리고 사용자가 도움을 요청할 때, 봇이 할 수 있는 3가지 핵심 작업인 사진 검색, 사진 공유, 인쇄물 주문에 대한 간단한 단추 메뉴를 표시합니다.  
 
-> 참고: 봇이 할 수 있는 일에 대한 명확한 옵션의 메뉴를 얻기 위해 사용자가 "도움말"을 입력할 필요가 없이, 봇과 처음 접촉할 때 기본 환경에 이것이 포함되어야 한다고 생각할 수 있습니다. **검색 기능**, 즉 봇이 할 수 있는 일을 사용자가 알도록 하는 것은 봇의 최대 과제 중 하나입니다.  적절한 [봇 디자인 원칙](https://docs.microsoft.com/ko-kr/bot-framework/bot-design-principles)이 도움이 될 수 있습니다.   
+> 참고: 봇이 할 수 있는 일에 대한 명확한 옵션의 메뉴를 얻기 위해 사용자가 "도움말"을 입력할 필요가 없이, 봇과 처음 접촉할 때 기본 환경에 이것이 포함되어야 한다고 생각할 수 있습니다. **검색 기능**, 즉 봇이 할 수 있는 일을 사용자가 알도록 하는 것은 봇의 최대 과제 중 하나입니다. 적절한 [봇 디자인 원칙](https://docs.microsoft.com/ko-kr/bot-framework/bot-design-principles)이 도움이 될 수 있습니다.   
 
 이제 정규식이 일치하지 않을 경우 두 번째 시도로 Scorable Group 1에서 LUIS를 호출합니다.  
 
-LUIS의 "None" 의도는 발화가 의도에 매핑되지 않았음을 의미합니다.  이 경우 다음 수준의 ScorableGroup으로 이동합니다.  RootDialog 클래스에서 다음과 같이 "None" 메서드를 수정합니다.
+LUIS의 "None" 의도는 발화가 의도에 매핑되지 않았음을 의미합니다. 이 경우 다음 수준의 ScorableGroup으로 이동합니다. RootDialog 클래스에서 다음과 같이 "None" 메서드를 수정합니다.
 
 ```csharp
 
@@ -824,7 +824,7 @@ F5 키를 눌러 봇을 실행하고 Bot Emulator에서 테스트합니다.
 
 Microsoft Bot을 사용하여 만든 봇은 공개적으로 액세스할 수 있는 모든 URL에서 호스트할 수 있습니다.  이 랩에서는 Azure 웹 사이트/App Service에서 봇을 호스팅합니다.  
 
-Visual Studio의 솔루션 탐색기에서 봇 응용 프로그램 프로젝트를 마우스 오른쪽 단추로 클릭하고 "게시"를 선택합니다.  이렇게 하면 Azure에 봇을 게시하는 과정을 안내하는 마법사가 시작됩니다.  
+Visual Studio의 솔루션 탐색기에서 봇 애플리케이션 프로젝트를 마우스 오른쪽 단추로 클릭하고 "게시"를 선택합니다.  이렇게 하면 Azure에 봇을 게시하는 과정을 안내하는 마법사가 시작됩니다.  
 
 게시 대상을 "Microsoft Azure App Service"로 선택합니다.  
 
@@ -836,13 +836,13 @@ App Service 화면에서 적절한 구독을 선택하고 "새로 만들기"를 
 
 마지막으로 웹 배포 설정이 표시되고 "게시"를 클릭할 수 있습니다.  Visual Studio의 출력 창에 배포 프로세스가 표시되고  http://testpicturebot.azurewebsites.net/ 같은 URL에 봇이 호스팅됩니다. 여기서 "testpicturebot"은 App Service API 앱 이름입니다.  
 
-### 랩: 봇 커넥터에 봇 등록
+### 랩: Bot Connector에 봇 등록
 
 이제 웹 브라우저에서 [http://dev.botframework.com](http://dev.botframework.com)으로 이동합니다.  [봇 등록](https://dev.botframework.com/bots/new)을 클릭하고 봇의 이름, 핸들 및 설명을 입력합니다.  메시지 끝점은 끝에 "api/messages"가 추가된 Azure 웹 사이트 URL(예: https://testpicturebot.azurewebsites.net/api/messages)입니다.  
 
 ![봇 등록](./resources/assets/BotRegistration.jpg) 
 
-그런 다음 Microsoft 앱 ID 와 암호를 만드는 단추를 클릭합니다.  Web.config에 필요한 봇 앱 ID 및 암호입니다.  Bot 앱 이름, 앱 ID 및 앱 암호를 안전한 장소에 저장하십시오!  암호에 대해 "확인"을 클릭한 후에는 다시 돌아갈 방법이 없습니다.  그런 다음 "완료하고 Bot Framework로 돌아가기"를 클릭합니다.  
+그런 다음 Microsoft 앱 ID 와 암호를 만드는 단추를 클릭합니다.  Web.config에서 필요한 봇 앱 ID 및 암호입니다.  Bot 앱 이름, 앱 ID 및 앱 암호를 안전한 장소에 저장하십시오!  암호에 대해 "확인"을 클릭한 후에는 다시 돌아갈 방법이 없습니다.  그런 다음 "완료하고 Bot Framework로 돌아가기"를 클릭합니다.  
 
 ![봇 앱 이름, ID 및 암호 생성](./resources/assets/BotGenerateAppInfo.jpg) 
 
@@ -860,11 +860,11 @@ App Service 화면에서 적절한 구독을 선택하고 "새로 만들기"를 
 
 ```
 
-프로젝트를 다시 빌드한 다음 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 다시 "게시"를 선택합니다.  마지막 설정이 기억되므로 "게시"를 누르기만 하면 됩니다. 
+프로젝트를 다시 빌드한 다음, 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 다시 "게시"를 선택합니다.  마지막 설정이 기억되므로 "게시"를 누르기만 하면 됩니다. 
 
 > 오류가 발생하여 MicrosoftAppPassword를 입력하라는 메시지가 표시됩니까? XML이므로 키에 "&", "<", ">", "'" 또는 '"'가 포함된 경우 이러한 기호를 다음과 같은 [이스케이프 기능](https://en.wikipedia.org/wiki/XML#Characters_and_escaping)으로 바꿔야 합니다. "&amp;", "&lt;", "&gt;", "&apos;", "&quot;". 
 
-이제 봇의 대시보드(https://dev.botframework.com/bots?id=TestPictureBot)로 돌아갈 수 있습니다.  채팅 창에서 대화해 보십시오.  웹 채팅에서는 캐러셀이 에뮬레이터에서와 다르게 보일 수 있습니다.  다양한 채널에서 다양한 컨트롤의 사용자 경험을 확인할 수 있는 Channel Inspector라는 훌륭한 도구가 https://docs.botframework.com/ko-kr/channel-inspector/channels/Skype/#navtitle에 있습니다.  
+이제 봇의 대시보드(예: https://dev.botframework.com/bots?id=TestPictureBot)로 돌아갈 수 있습니다.  채팅 창에서 봇과 대화해 보십시오.  웹 채팅에서는 캐러셀이 에뮬레이터에서와 다르게 보일 수 있습니다.  다양한 채널에서 다양한 컨트롤의 사용자 경험을 확인할 수 있는 Channel Inspector라는 훌륭한 도구가 https://docs.botframework.com/ko-kr/channel-inspector/channels/Skype/#navtitle에 있습니다.  
 봇의 대시보드에서 다른 채널을 추가하고 Skype, Facebook Messenger 또는 Slack에서 봇을 사용해 볼 수 있습니다.  봇 대시보드의 채널 이름 오른쪽에 있는 "추가" 단추를 클릭하고 지침을 따르기만 하면 됩니다.
 
 **일찍 끝났다면 이 추가 크레딧 랩을 사용해 보십시오.**

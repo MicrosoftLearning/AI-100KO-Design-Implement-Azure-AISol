@@ -1,4 +1,4 @@
-﻿## 4_게시 및 등록:
+﻿## 4_Publish_and_Register:
 예상 시간: 10-15분
 
 ### 랩 4.1: 봇 게시
@@ -14,7 +14,7 @@ Microsoft Bot Framework를 사용하여 만든 봇은 공개적으로 액세스�
 
 먼저 몇 가지 키를 가져와야 합니다. 방금 만든 웹앱 봇(포털에 있음)으로 이동합니다. App Service 설정->응용 프로그램 설정->앱 설정에서 BotId, MicrosoftAppId 및 MicrosoftAppPassword를 가져옵니다. 잠시 후에 이러한 키가 필요합니다.
 
-Visual Studio에서 PictureBot으로 돌아갑니다. Web.config 파일에서 BotId, MicrosoftAppId 및 MicrosoftAppPassword로 `appSettings` 아래 공란을 채웁니다. 파일을 저장합니다. 
+Visual Studio에서 PictureBot으로 돌아갑니다. Web.config 파일에서 BotId, MicrosoftAppId 및 MicrosoftAppPassword로 'appSettings' 아래 공란을 채웁니다. 파일을 저장합니다. 
 
 > 오류가 발생하여 MicrosoftAppPassword를 입력하라는 메시지가 표시됩니까? XML이므로 키에 "&", "<", ">", "'" 또는 '"'가 포함된 경우 이러한 기호를 다음과 같은 [이스케이프 기능](https://en.wikipedia.org/wiki/XML#Characters_and_escaping)으로 바꿔야 합니다. "\&amp;", "\&lt;", "\&gt;", "\&apos;", "\&quot;". 
 

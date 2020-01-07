@@ -14,7 +14,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 
 ```
 
-다음으로 LUIS 앱 ID 및 LUIS 키를 사용하여 이 클래스에 LuisModel 특성을 지정합니다.  이러한 값을 찾을 수 없는 경우 http://luis.ai로 돌아가서  응용 프로그램을 클릭하고 "앱 게시" 페이지로 이동합니다. 끝점 URL에서 LUIS 앱 ID 및 LUIS 키를 얻을 수 있습니다. (힌트: LUIS 앱 ID에는 하이픈이 있으며 LUIS 키에는 없습니다.) LUIS 앱 ID 및 LUIS 키를 사용하여 `[Serializable]` 바로 위에 다음 코드 줄을 배치해야 합니다.
+다음으로 LUIS 앱 ID 및 LUIS 키를 사용하여 이 클래스에 LuisModel 특성을 지정합니다.  이러한 값을 찾을 수 없는 경우 http://luis.ai로 돌아가서  애플리케이션을 클릭하고 "앱 게시" 페이지로 이동합니다. 끝점 URL에서 LUIS 앱 ID 및 LUIS 키를 얻을 수 있습니다. (힌트: LUIS 앱 ID에는 하이픈이 있으며 LUIS 키에는 없습니다.) LUIS 앱 ID 및 LUIS 키를 사용하여 `[Serializable]` 바로 위에 다음 코드 줄을 배치해야 합니다.
 
 ```csharp
 

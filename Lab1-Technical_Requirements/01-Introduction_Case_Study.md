@@ -1,18 +1,17 @@
 ﻿---
 lab:
-    title: '랩 1: 소개'
+    title: '랩 1: 기술 요구 사항'
     module: '모듈 1: Azure Cognitive Services 소개'
 ---
 
-# 랩 1: 소개
+# 랩 1: 기술 요구 사항
 
-## 기술 요구 사항
-
-### 모듈: 모듈 01 - Azure Cognitive Services 소개
+## 소개
 
 이 랩에서는 워크샵 사례 연구를 소개하고 Microsoft Cognitive Services 제품군 내에서 도구를 빌드할 수 있도록 로컬 워크스테이션과 Azure 인스턴스에 도구를 설정합니다.
 
 # 워크샵 사례 연구
+
 ## 시나리오
 
 자전거와 자전거 장비를 판매하는 Adventure Works LLC가 여러분의 새 고객으로 배정되었습니다.
@@ -45,16 +44,30 @@ Adventure Works Cycles는 대규모 다국적 제조 회사로, 자전거 및 �
 
 - 나중에 검토하기 위해 채팅 봇 세션 로깅
 
+로컬 드라이브에서 사진을 수집한 다음 [Computer Vision API](https://www.microsoft.com/cognitive-services/ko-kr/computer-vision-api)를 호출하여 이미지를 분석하고 태그 및 설명을 얻을 수 있는 단순한 C# 애플리케이션을 빌드합니다.
+
+랩 전반에 걸쳐 이 랩에서 계속하여 고객의 텍스트 문의와 상호 작용하는 [Bot Framework](https://dev.botframework.com/) 봇을 빌드하는 방법을 보여 드리겠습니다. 그런 다음 [QnA Maker](https://docs.microsoft.com/ko-kr/azure/cognitive-services/qnamaker/overview/overview)를 통해 기존 기술 자료 및 FAQ를 Bot Framework에 통합하기 위한 간단한 솔루션을 시연합니다. 마지막으로, 쿼리에서 의도를 자동으로 도출하고 이를 바탕으로 고객의 텍스트 요청에 지능적으로 응답하도록 [LUIS](https://www.microsoft.com/cognitive-services/ko-kr/language-understanding-intelligent-service-luis)를 사용하여 이 봇을 확장하겠습니다.
+
+고객이 봇과 상호 작용하는 동안 다른 데이터에 액세스할 수 있도록 Bing Search를 사용하기 위한 컨텍스트만 제공하며 이러한 시나리오를 랩에서 구현하지는 않습니다. 참가자는 [Bing Web Search](https://azure.microsoft.com/ko-kr/services/cognitive-services/directory/search/) 서비스에 대한 자세한 내용을 확인할 수 있습니다.
+
+이 랩의 범위를 벗어나지만 이 아키텍처는 Azure의 데이터 솔루션을 통합하고, [Blob Storage]((https://docs.microsoft.com/ko-kr/azure/storage/storage-dotnet-how-to-use-blobs)와 [Cosmos DB](https://azure.microsoft.com/ko-kr/services/cosmos-db/)를 통해 이 아키텍처의 이미지 및 메타데이터 저장을 관리합니다.
+
+![아키텍처 다이어그램](../images/AI_Immersion_Arch.png)
+
+
 ## 아키텍처
 
 여러분의 팀은 최근에 잠재적 아키텍처(아래)를 제시했고 Adventure Works에서 이를 승인했습니다.
 
 ![아키텍처](../images/AI_Immersion_Arch.png)
 
-
-* [Text Analytics](https://azure.microsoft.com/ko-kr/services/cognitive-services/text-analytics/)를 통해 언어 감지
 * [Computer Vision](https://azure.microsoft.com/ko-kr/services/cognitive-services/computer-vision/)을 통해 이미지 업로드 허용 및 콘텐츠 감지
 * [QnA Maker](https://azure.microsoft.com/ko-kr/services/cognitive-services/qna-maker/)를 통해 정적 기술 자료에서 봇 상호 작용 촉진
+* [Text Analytics](https://azure.microsoft.com/ko-kr/services/cognitive-services/text-analytics/)를 통해 언어 감지
 * [LUIS](https://docs.microsoft.com/ko-kr/azure/cognitive-services/LUIS/Home)(Language Understanding Intelligent Service)를 통해
 텍스트에서 의도 및 엔터티 추출
 * [Azure Bot Service](https://azure.microsoft.com/ko-kr/services/bot-service/) 커넥터 서비스를 통해 챗봇 인터페이스를 사용하여 앱 인텔리전스 활용
+
+## 다음 단계
+
+-   [랩 01-02: 기술 요구 사항](02-Technical_Requirements.md)

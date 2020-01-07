@@ -12,9 +12,9 @@
 
 DirectLineBot을 사용하려면 다음을 수행해야 합니다.
 
-- Azure에 이를 배포합니다. [이 자습서](https://docs.microsoft.com/ko-kr/bot-framework/deploy-dotnet-bot-visual-studio)를 따라 Visual Studio에서 Azure에 직접 .NET 봇을 배포하는 방법을 알아봅니다.
+- Azure에 이를 배포합니다. [이 자습서](https://docs.microsoft.com/ko-kr/bot-framework/deploy-dotnet-bot-visual-studio) 를 따라 Visual Studio에서 Azure에 직접 .NET 봇을 배포하는 방법을 알아봅니다.
 
-- 다른 사용자가 DirectLineBot을 사용하기 전에 포털에 등록하십시오. 등록 단계는 [등록 지침](https://docs.microsoft.com/ko-kr/bot-framework/portal-register-bot)에서 찾을 수 있습니다.
+- 다른 사용자가 DirectLineBot을 사용하기 전에 포털에 등록하십시오. 등록 단계는 [등록 지침](https://docs.microsoft.com/ko-kr/bot-framework/portal-register-bot) 에서 찾을 수 있습니다.
 
 
 DirectLineSampleClient는 봇에 메시지를 보낼 클라이언트입니다.
@@ -49,7 +49,7 @@ Direct Line API를 사용하면 클라이언트가 HTTP Post 요청을 실행하
 
 2.	콘솔을 통해 메시지를 제출하고 대화 ID를 가져옵니다. Program.cs 52번 줄에서 봇과 대화하기 위해 필요한 대화 ID가 출력됩니다.
 
-	````Console.WriteLine("Conversation ID:" + conversation.ConversationId);````
+````Console.WriteLine("Conversation ID:" + conversation.ConversationId);````
 
 	![콘솔](images/Console.png)
 
@@ -73,7 +73,7 @@ Direct Line API를 사용하면 클라이언트가 HTTP Post 요청을 실행하
 
 	4.2 웹 기반 REST 클라이언트:
 
-	봇에서 메시지를 수신하기 위해 Chrome과 함께 [고급 REST 클라이언트](https://advancedrestclient.com/)를 사용할 수 있습니다. 
+	봇에서 메시지를 수신하기 위해 Chrome과 함께 [고급 REST 클라이언트](https://advancedrestclient.com/) 를 사용할 수 있습니다. 
 	
 	고급 REST 클라이언트를 사용하려면 헤더에 헤더 이름(Authorization) 및 헤더 값(Bearer SecretKey)을 포함해야 합니다. 요청 URL은 https://directline.botframework.com/api/conversations/{conversationId}/messages 끝점입니다.
 	
@@ -89,7 +89,7 @@ Direct Line API를 사용하면 클라이언트가 HTTP Post 요청을 실행하
 
 	3.0에서는 이전 버전과 달리 이미지 또는 영웅 카드와 같은 리치 미디어를 보낼 수도 있습니다. DirectLineBotDialog.cs를 사용하는 경우 case 문 중 하나가 이미지를 보내기 위해 "send me a botframework image"라는 텍스트를 찾습니다.
 
-	```c#
+```c#
 	case "send me a botframework image":
 						
 		reply.Text = $"Sample message with an Image attachment";
@@ -101,7 +101,7 @@ Direct Line API를 사용하면 클라이언트가 HTTP Post 요청을 실행하
 			};
 
 		reply.Attachments.Add(imageAttachment);
-	```
+```
 
 	클라이언트를 사용하여 이 텍스트를 입력하고 아래와 같이 curl을 통해 결과를 봅니다. 이미지 URL이 이미지 배열에 표시된 것을 볼 수 있습니다.
 

@@ -25,13 +25,13 @@
 
 셋째, 포털을 사용한 경험이 있으며 Azure에서 리소스를 만들고 비용을 지출할 수 있어야 합니다. 이 워크샵에서는 Azure Pass를 제공하지 않습니다.
 
->참고: 이 워크샵은 Visual Studio Community Version 15.4.0을 사용하여 DSVM(Data Science Virtual Machine)에서 개발 및 테스트되었습니다.
+>**참고** 이 워크샵은 Visual Studio Community Version 15.4.0을 사용하여 DSVM(Data Science Virtual Machine)에서 개발 및 테스트되었습니다.
 
 ## 소개
 
 이 워크샵에서는 사진을 가져오고, Cognitive Services를 사용하여 이미지에서 개체와 사람을 찾고, 그 사람들의 감정을 파악하고, 이러한 모든 데이터를 NoSQL Store(CosmosDB)에 저장하는 종단 간 시나리오를 빌드합니다. NoSQL Store를 사용하여 Azure Search 인덱스를 채운 다음, 쉬운 대상 쿼리가 가능하도록 LUIS를 사용해 Bot Framework 봇을 빌드하겠습니다.
 
-> 참고: 이 랩은 이 워크샵 앞부분의 다양한 랩(Computer Vision, Azure Search, LUIS)에서 얻은 몇 가지 결과를 결합합니다. 위에 나열된 랩을 완료하지 않은 경우 더 진행하기 전에 Azure Search 및 LUIS 랩을 완료해야 합니다. 또는 동료의 Azure Search/LUIS 랩 키를 사용하도록 요청할 수 있습니다.
+> **참고** 이 랩은 이 워크샵 앞부분의 다양한 랩(Computer Vision, Azure Search, LUIS)에서 얻은 몇 가지 결과를 결합합니다. 위에 나열된 랩을 완료하지 않은 경우 더 진행하기 전에 Azure Search 및 LUIS 랩을 완료해야 합니다. 또는 동료의 Azure Search/LUIS 랩 키를 사용하도록 요청할 수 있습니다.
 
 ## 아키텍처
 
@@ -63,7 +63,7 @@ CosmosDB에 데이터를 저장한 다음 이를 기반으로 [Azure Search](htt
 
 이 랩에서는 다양한 키를 수집합니다. 워크샵 전반에서 쉽게 액세스할 수 있도록 모든 키를 텍스트 파일에 저장하는 것이 좋습니다.
 
-> 키_
+> _키_
 >- LUIS API:
 >- Cosmos DB 연결 문자열:
 >- Azure Search 이름:
