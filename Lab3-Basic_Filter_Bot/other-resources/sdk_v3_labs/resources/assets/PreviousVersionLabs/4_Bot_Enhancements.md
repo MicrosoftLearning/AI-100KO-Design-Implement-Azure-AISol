@@ -1,11 +1,11 @@
-﻿## 4_봇 향상:
+﻿## 4_Bot_Enhancements:
 예상 시간: 20-30분
 
 ### 랩: 정규식 및 Scorable Groups
 
 봇을 개선하기 위해 할 수 있는 일이 여러 가지 있습니다. 우선, 봇이 사용자로부터 상당히 자주 수신하는 간단한 "안녕하세요" 인사말을 위해 LUIS를 호출하는 것은 좋지 않습니다.  단순한 정규식이 이와 일치할 수 있으며 네트워크 대기 시간으로 인한 시간과 LUIS 서비스를 호출하는 데 드는 비용을 줄여 줍니다.  
 
-또한 봇의 복잡성이 증가하는 동시에, 사용자의 입력을 받고 다양한 서비스를 사용하여 해석하기 때문에 이 흐름을 관리하는 프로세스가 필요합니다.  예를 들어 정규식을 먼저 시도하고 일치하지 않는 경우 LUIS를 호출하고, 이후에는 [QnA Maker](http://qnamaker.ai) 및 Azure Search 등의 다른 서비스를 사용해 볼 수 있습니다.  이를 관리하는 좋은 방법은 [ScorableGroups](https://blog.botframework.com/2017/07/06/Scorables/)를 사용하는 것입니다.  ScorableGroups는 이러한 서비스 호출에 순서를 설정하는 특성을 제공합니다.  코드에서 먼저 정규식과 일치시킨 다음, 발화 해석을 위해 LUIS를 호출하고, 마지막으로 일반적인 "무슨 말씀이신지 잘 모르겠습니다." 같은 응답을 제시하는 순서를 설정해 보겠습니다.    
+또한 봇의 복잡성이 증가하는 동시에, 사용자의 입력을 받고 다양한 서비스를 사용하여 해석하기 때문에 이 흐름을 관리하는 프로세스가 필요합니다.  예를 들어 정규식을 먼저 시도하고 일치하지 않을 경우 LUIS를 호출합니다. 그리고 이후에는 드롭다운하여 [QnA Maker](http://qnamaker.ai) 및 Azure Cognitive Search와 같은 다른 서비스를 사용해 볼 수 있습니다.  이를 관리하는 좋은 방법은 [ScorableGroups](https://blog.botframework.com/2017/07/06/Scorables/)를 사용하는 것입니다.  ScorableGroups는 이러한 서비스 호출에 순서를 설정하는 특성을 제공합니다.  코드에서 먼저 정규식과 일치시킨 다음, 발화 해석을 위해 LUIS를 호출하고, 마지막으로 일반적인 "무슨 말씀이신지 잘 모르겠습니다." 같은 응답을 제시하는 순서를 설정해 보겠습니다.    
 
 ScorableGroups를 사용하려면 RootDialog가 LuisDialog 대신 DispatchDialog에서 상속해야 합니다(하지만 클래스에서 LuisModel 특성을 여전히 가질 수 있음).  또한 Microsoft.Bot.Builder.Scorables(및 기타)에 대한 참조가 필요합니다.  따라서 RootDialog.cs 파일에 다음을 추가합니다.
 
@@ -74,7 +74,7 @@ using System.Collections.Generic;
 
 > 참고: 봇이 할 수 있는 일에 대한 명확한 옵션의 메뉴를 얻기 위해 사용자가 "도움말"을 입력할 필요가 없이, 봇과 처음 접촉할 때 기본 환경에 이것이 포함되어야 한다고 생각할 수 있습니다. **검색 기능**, 즉 봇이 할 수 있는 일을 사용자가 알도록 하는 것은 봇의 최대 과제 중 하나입니다.  적절한 [봇 디자인 원칙](https://docs.microsoft.com/ko-kr/bot-framework/bot-design-principles)이 도움이 될 수 있습니다.   
 
-이 설정을 사용하면 정규식이 일치하지 않을 경우 두 번째 시도로 Scorable Group 1에서 LUIS를 호출할 수 있습니다.  
+이 설정을 사용하면 Scorable Group 1에서 일치하는 정규식이 없을 경우 두 번째 시도로 LUIS를 호출합니다.  
 
 LUIS의 "None" 의도는 발화가 의도에 매핑되지 않았음을 의미합니다.  이 경우 다음 수준의 ScorableGroup으로 이동합니다.  RootDialog 클래스에서 다음과 같이 "None" 메서드를 수정합니다.
 
@@ -177,7 +177,7 @@ F5 키를 눌러 봇을 실행하고 Bot Emulator에서 테스트합니다.
 
 Microsoft Bot을 사용하여 만든 봇은 공개적으로 액세스할 수 있는 모든 URL에서 호스트할 수 있습니다.  이 랩에서는 Azure 웹 사이트/App Service에서 봇을 호스팅합니다.  
 
-Visual Studio의 솔루션 탐색기에서 봇 응용 프로그램 프로젝트를 마우스 오른쪽 단추로 클릭하고 "게시"를 선택합니다.  이렇게 하면 Azure에 봇을 게시하는 과정을 안내하는 마법사가 시작됩니다.  
+Visual Studio의 솔루션 탐색기에서 봇 애플리케이션 프로젝트를 마우스 오른쪽 단추로 클릭하고 "게시"를 선택합니다.  이렇게 하면 Azure에 봇을 게시하는 과정을 안내하는 마법사가 시작됩니다.  
 
 게시 대상을 "Microsoft Azure App Service"로 선택합니다.  
 
@@ -189,13 +189,13 @@ App Service 화면에서 적절한 구독을 선택하고 "새로 만들기"를 
 
 마지막으로 웹 배포 설정이 표시되고 "게시"를 클릭할 수 있습니다.  Visual Studio의 출력 창에 배포 프로세스가 표시되고  http://testpicturebot.azurewebsites.net/ 같은 URL에 봇이 호스팅됩니다. 여기서 "testpicturebot"은 App Service API 앱 이름입니다.  
 
-### 랩: 봇 커넥터에 봇 등록
+### 랩: Bot Connector에 봇 등록
 
 웹 브라우저에서 [http://dev.botframework.com](http://dev.botframework.com)으로 이동합니다.  [봇 등록](https://dev.botframework.com/bots/new)을 클릭하고 봇의 이름, 핸들 및 설명을 입력합니다.  메시지 끝점은 끝에 "api/messages"가 추가된 Azure 웹 사이트 URL(예: https://testpicturebot.azurewebsites.net/api/messages)입니다.  
 
 ![봇 등록](./resources/assets/BotRegistration.jpg) 
 
-그런 다음 Microsoft 앱 ID 와 암호를 만드는 단추를 클릭합니다.  Web.config에 필요한 봇 앱 ID 및 암호입니다.  Bot 앱 이름, 앱 ID 및 앱 암호를 안전한 장소에 저장하십시오!  암호에 대해 "확인"을 클릭한 후에는 다시 돌아갈 방법이 없습니다.  그런 다음 "완료하고 Bot Framework로 돌아가기"를 클릭합니다.  
+그런 다음 Microsoft 앱 ID 와 암호를 만드는 단추를 클릭합니다.  Web.config에서 필요한 봇 앱 ID 및 암호입니다.  Bot 앱 이름, 앱 ID 및 앱 암호를 안전한 장소에 저장하십시오!  암호에 대해 "확인"을 클릭한 후에는 다시 돌아갈 방법이 없습니다.  그런 다음 "완료하고 Bot Framework로 돌아가기"를 클릭합니다.  
 
 ![봇 앱 이름, ID 및 암호 생성](./resources/assets/BotGenerateAppInfo.jpg) 
 
@@ -213,11 +213,11 @@ App Service 화면에서 적절한 구독을 선택하고 "새로 만들기"를 
 
 ```
 
-프로젝트를 다시 빌드한 다음 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 다시 "게시"를 선택합니다.  마지막 설정이 기억되므로 "게시"를 누르기만 하면 됩니다. 
+프로젝트를 다시 빌드한 다음, 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 다시 "게시"를 선택합니다.  마지막 설정이 기억되므로 "게시"를 누르기만 하면 됩니다. 
 
 > 오류가 발생하여 MicrosoftAppPassword를 입력하라는 메시지가 표시됩니까? XML이므로 키에 "&", "<", ">", "'" 또는 '"'가 포함된 경우 이러한 기호를 다음과 같은 [이스케이프 기능](https://en.wikipedia.org/wiki/XML#Characters_and_escaping)으로 바꿔야 합니다. "&amp;", "&lt;", "&gt;", "&apos;", "&quot;". 
 
-봇의 대시보드(https://dev.botframework.com/bots?id=TestPictureBot)로 돌아갑니다.  채팅 창에서 대화해 보십시오.  웹 채팅에서는 캐러셀이 에뮬레이터에서와 다르게 보일 수 있습니다.  다양한 채널에서 다양한 컨트롤의 사용자 경험을 확인할 수 있는 Channel Inspector라는 훌륭한 도구가 https://docs.botframework.com/ko-kr/channel-inspector/channels/Skype/#navtitle에 있습니다.  
+봇의 대시보드로 돌아갑니다(예: https://dev.botframework.com/bots?id=TestPictureBot).  채팅 창에서 봇과 대화해 보십시오.  웹 채팅에서는 캐러셀이 에뮬레이터에서와 다르게 보일 수 있습니다.  다양한 채널에서 다양한 컨트롤의 사용자 경험을 확인할 수 있는 Channel Inspector라는 훌륭한 도구가 https://docs.botframework.com/ko-kr/channel-inspector/channels/Skype/#navtitle에 있습니다.  
 봇의 대시보드에서 다른 채널을 추가하고 Skype, Facebook Messenger 또는 Slack에서 봇을 사용해 볼 수 있습니다.  봇 대시보드의 채널 이름 오른쪽에 있는 "추가" 단추를 클릭하고 지침을 따르기만 하면 됩니다.
 
 

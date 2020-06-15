@@ -1,6 +1,6 @@
-﻿# AI-100-DesignImplementAzureAISol
-AI100T01A ILT 과정용 랩 파일
+﻿# Azure AI 솔루션 설계 및 구현
 
+AI100T01A ILT 과정용 랩 파일
 
 ## 랩 1: 기술 요구 사항 충족
 
@@ -18,7 +18,7 @@ AI100T01A ILT 과정용 랩 파일
 
 또한 Bot Emulator에서 봇을 테스트하고 봇이 사용자로부터 받는 메시지에 대한 전문적인 작업을 수행할 수 있는 미들웨어를 다룹니다.
 
-Azure Search 및 Microsoft LUIS(Language Understanding Intelligent Service)와 관련된 몇 가지 개념을 살펴보지만 이 랩에서는 구현하지 않습니다.
+Azure Cognitive Search 및 Microsoft LUIS(Language Understanding Intelligent Service)와 관련된 몇 가지 개념을 살펴보겠지만 이 랩에서 구현하지는 않습니다.
 
 ## 랩 4: 봇 채팅 로깅
 

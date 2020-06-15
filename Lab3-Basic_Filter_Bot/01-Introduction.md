@@ -1,10 +1,4 @@
-﻿---
-lab:
-    title: '랩 3: 기본 필터링 봇'
-    module: '모듈 2: 봇 만들기'
----
-
-# 랩 3: 기본 필터링 봇
+﻿# 랩 3: 기본 필터링 봇
 
 ## 소개
 
@@ -14,8 +8,8 @@ lab:
 
 또한 Bot Emulator에서 봇을 테스트하고 봇이 사용자로부터 받는 메시지에 대한 전문적인 작업을 수행할 수 있는 미들웨어를 다룹니다.
 
-Azure Search 및 Microsoft LUIS(Language Understanding Intelligent Service)와 관련된 몇 가지 개념을 살펴보지만 이 랩에서는 구현하지 않습니다.
+Azure Cognitive Search 및 Microsoft LUIS(Language Understanding Intelligent Service)와 관련된 몇 가지 개념을 살펴보겠지만 이 랩에서 구현하지는 않습니다.
 
 ## 다음 단계
 
--   [랩 03-02: 기본 필터 봇](../Lab3-Basic_Filter_Bot/02-Basic_Filter_Bot.md)
+- [랩 03-02: 기본 필터 봇](../Lab3-Basic_Filter_Bot/02-Basic_Filter_Bot.md)

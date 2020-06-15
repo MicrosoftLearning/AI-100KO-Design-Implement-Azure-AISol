@@ -8,7 +8,7 @@ Bot Framework를 사용해본 경험이 있을 줄로 생각하는데, 그렇다
 ### 랩: 봇 개발 준비
 
 우리는 C# SDK를 사용하여 봇을 개발할 것입니다.  시작하려면 다음 두 가지가 필요합니다.
-1. [여기](http://aka.ms/bf-bc-vstemplate)에서 Bot Framework 프로젝트 템플릿을 다운로드합니다.  이 파일은 "Bot Application.zip"이라고 하며 \Documents\Visual Studio 2017\Templates\ProjectTemplates\Visual C#\ 디렉터리에 저장해야 합니다.  압축된 전체 파일을 이 디렉터리에 놓으면 되며, 압축을 풀 필요가 없습니다.  
+1. [여기](http://aka.ms/bf-bc-vstemplate)에서 Bot Framework 프로젝트 템플릿을 다운로드합니다.  이 파일은 "Bot Application.zip"이라고 하며 \Documents\Visual Studio 2019\Templates\ProjectTemplates\Visual C#\ 디렉터리에 저장해야 합니다.  압축된 전체 파일을 이 디렉터리에 놓으면 되며, 압축을 풀 필요가 없습니다.  
 2. 로컬에서 봇을 테스트하도록 [여기](https://github.com/Microsoft/BotFramework-Emulator/releases/download/v3.5.33/botframework-emulator-Setup-3.5.33.exe)에서 Bot Framework Emulator를 다운로드합니다.  이 에뮬레이터는 `c:\Users\`_your-username_`\AppData\Local\botframework\app-3.5.33\botframework-emulator.exe`에 설치됩니다. 
 
 ### 랩: 단순한 봇 만들기 및 실행
@@ -19,10 +19,10 @@ Visual Studio에서 파일 --> 새 프로젝트로 이동하여 "PictureBot"이�
 
 >**단순한 봇 만들기 및 실행** 랩의 나머지 부분은 선택 사항입니다. 전제 조건에 따라 Bot Framework를 사용한 경험이 있어야 합니다. F5 키를 눌러 올바르게 빌드된 것을 확인한 후 다음 랩으로 이동할 수 있습니다.
 
-메시지를 반복하고 문자 길이를 알려주는 에코 봇인 샘플 봇 코드를 살펴봅니다.  특히 다음 사항을 **참고하십시오**.
-+ App_Start 아래의 **WebApiConfig.cs** 에서 경로 템플릿은 api/{controller}/{id}(id는 선택 사항)입니다.  이 때문에 봇의 끝점을 호출할 때 항상 끝에 api/messages를 추가합니다.  
-+ Controllers 아래의 **MessagesController.cs** 는 봇으로의 진입점입니다. 봇은 다양한 활동 유형에 응답할 수 있으며 메시지를 보내면 RootDialog가 호출됩니다.  
-+ Dialogs 아래의 **RootDialog.cs** 에서 "StartAsync"는 사용자의 메시지를 기다리는 진입점이며, "MessageReceivedAsync"는 받은 메시지를 처리한 후 추가 메시지를 기다리는 메서드입니다.  "context.PostAsync"를 사용하여 봇에서 사용자에게 메시지를 다시 보낼 수 있습니다.  
+메시지를 반복하고 문자 길이를 알려주는 에코 봇인 샘플 봇 코드를 살펴봅니다.  특히 다음 사항을 **참고**하십시오.
++ App_Start 아래의 **WebApiConfig.cs**에서 경로 템플릿은 api/{controller}/{id}(id는 선택 사항)입니다.  이 때문에 봇의 끝점을 호출할 때 항상 끝에 api/messages를 추가합니다.  
++ Controllers 아래의 **MessagesController.cs**는 봇으로의 진입점입니다. 봇은 다양한 활동 유형에 응답할 수 있으며 메시지를 보내면 RootDialog가 호출됩니다.  
++ Dialogs 아래의 **RootDialog.cs**에서 "StartAsync"는 사용자의 메시지를 기다리는 진입점이며, "MessageReceivedAsync"는 받은 메시지를 처리한 후 추가 메시지를 기다리는 메서드입니다.  "context.PostAsync"를 사용하여 봇에서 사용자에게 메시지를 다시 보낼 수 있습니다.  
 
 F5 키를 클릭하여 샘플 코드를 실행합니다.  적절한 종속 항목을 다운로드하는 것은 NuGet을 통해 처리됩니다.  
 
@@ -49,7 +49,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 
 ```
 
-다음으로, RootDialog 클래스가 IDialog<object>가 아닌 LuisDialog<object>에서 파생되도록 변경합니다.  다음으로 LUIS 앱 ID 및 LUIS 키를 사용하여 이 클래스에 LuisModel 특성을 지정합니다.  이러한 값을 찾을 수 없는 경우 http://luis.ai로 돌아가서  응용 프로그램을 클릭하고 "앱 게시" 페이지로 이동합니다. 끝점 URL에서 LUIS 앱 ID 및 LUIS 키를 얻을 수 있습니다. (힌트: LUIS 앱 ID에는 하이픈이 있으며 LUIS 키에는 없습니다.)
+다음으로, RootDialog 클래스가 IDialog<object>가 아닌 LuisDialog<object>에서 파생되도록 변경합니다.  다음으로 LUIS 앱 ID 및 LUIS 키를 사용하여 이 클래스에 LuisModel 특성을 지정합니다.  이러한 값을 찾을 수 없는 경우 http://luis.ai로 돌아가서  애플리케이션을 클릭하고 "앱 게시" 페이지로 이동합니다. 끝점 URL에서 LUIS 앱 ID 및 LUIS 키를 얻을 수 있습니다. (힌트: LUIS 앱 ID에는 하이픈이 있으며 LUIS 키에는 없습니다.)
 
 ```csharp
 
@@ -122,32 +122,32 @@ namespace PictureBot.Dialogs
 
 > 참고: 발화 제안 기능은 매우 강력합니다.  LUIS는 표시할 발화에 대해 스마트한 결정을 내립니다.  루프의 사람을 통해 수동으로 레이블이 지정되어 최대한 개선 가능한 발화를 선택합니다.  예를 들어 주어진 발화가 47% 신뢰 수준으로 Intent1에 매핑되고 48% 신뢰 수준으로 Intent2에 매핑될 것으로 LUIS 모델이 예측한 경우, 후자가 사람에게 표시하여 수동으로 매핑할 강력한 후보가 됩니다. 이 모델에서는 두 의도 간 차이가 거의 없기 때문입니다.  
 
-이제 LUIS 모델을 사용하여 사용자의 의도를 파악할 수 있으므로 Azure Search를 통합하여 사진을 찾아보겠습니다.  
+이제 LUIS 모델을 사용하여 사용자의 의도를 파악할 수 있으므로 Azure Cognitive Search를 통합하여 사진을 찾아보겠습니다.  
 
-### 랩: Azure Search를 사용하도록 봇 구성 
+### 랩: Azure Cognitive Search를 사용하도록 봇 구성
 
-먼저 Azure Search 인덱스에 연결하기 위한 관련 정보를 봇에 제공해야 합니다.  연결 정보를 저장하는 가장 좋은 위치는 구성 파일입니다.  
+먼저 Azure Cognitive Search 인덱스에 연결하기 위해 관련 정보를 봇에 제공해야 합니다.  연결 정보를 저장하는 가장 좋은 위치는 구성 파일입니다.  
 
 Web.config를 열고 appSettings 섹션에서 다음을 추가합니다.
 
-```xml    
-    <!-- Azure Search Settings -->
+```xml
+    <!-- Azure Cognitive Search Settings -->
     <add key="SearchDialogsServiceName" value="" />
     <add key="SearchDialogsServiceKey" value="" />
     <add key="SearchDialogsIndexName" value="images" />
 ```
 
-SearchDialogsServiceName의 값을 앞에서 만든 Azure Search 서비스의 이름으로 설정합니다.  필요한 경우 [Azure Portal](https://portal.azure.com)로 돌아가서 이를 확인합니다.  
+SearchDialogsServiceName의 값을 앞에서 만든 Azure Cognitive Search 서비스의 이름으로 설정합니다.  필요한 경우 [Azure Portal](https://portal.azure.com)로 돌아가서 이를 확인합니다.  
 
-SearchDialogsServiceKey의 값을 이 서비스의 키로 설정합니다.  이 값은 [Azure Portal](https://portal.azure.com)의 Azure Search 키 섹션 아래에서 찾을 수 있습니다.  아래 스크린샷에서 SearchDialogsServiceName은 "aiimmersionsearch"이고 SearchDialogsServiceKey는 "375..."입니다.  
+SearchDialogsServiceKey의 값을 이 서비스의 키로 설정합니다.  이 값은 [Azure Portal](https://portal.azure.com)의 Azure Cognitive Search 키 섹션에서 찾을 수 있습니다.  아래 스크린샷에서 SearchDialogsServiceName은 "aiimmersionsearch"이고 SearchDialogsServiceKey는 "375..."입니다.  
 
-![Azure Search 설정](./resources/assets/AzureSearchSettings.jpg) 
+![Azure Cognitive Search 설정](./resources/assets/AzureSearchSettings.jpg) 
 
-### 랩: Azure Search를 사용하도록 봇 업데이트
+### 랩: Azure Cognitive Search를 사용하도록 봇 업데이트
 
-다음으로 Azure Search를 호출하도록 봇을 업데이트하겠습니다.  먼저 도구-->NuGet Package Manager-->솔루션용 NuGet 패키지 관리를 선택합니다.  검색 상자에 "Microsoft.Azure.Search"를 입력합니다.  해당 라이브러리를 선택하고 프로젝트를 나타내는 확인란을 선택한 후 설치합니다.  다른 종속성 항목도 설치할 수 있습니다. 설치된 패키지에서 "Newtonsoft.Json" 패키지도 업데이트해야 할 수 있습니다.
+다음으로 Azure Cognitive Search를 호출하도록 봇을 업데이트하겠습니다.  먼저 도구-->NuGet Package Manager-->솔루션용 NuGet 패키지 관리를 선택합니다.  검색 상자에 "Microsoft.Azure.Search"를 입력합니다.  해당 라이브러리를 선택하고 프로젝트를 나타내는 확인란을 선택한 후 설치합니다.  다른 종속성 항목도 설치할 수 있습니다. 설치된 패키지에서 "Newtonsoft.Json" 패키지도 업데이트해야 할 수 있습니다.
 
-![Azure Search NuGet](./resources/assets/AzureSearchNuGet.jpg) 
+![Azure Cognitive Search NuGet](./resources/assets/AzureSearchNuGet.jpg) 
 
 Visual Studio의 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 추가-->새 폴더를 선택합니다.  "Models"라는 폴더를 만듭니다.  "Models" 폴더를 마우스 오른쪽 단추로 클릭하고 추가-->기존 항목을 선택합니다.  이 작업을 두 번 수행하여 Models 폴더 아래에 다음 두 파일을 추가합니다. 필요한 경우 네임스페이스를 조정하십시오.
 1. [ImageMapper.cs](./resources/code/Models/ImageMapper.cs)
