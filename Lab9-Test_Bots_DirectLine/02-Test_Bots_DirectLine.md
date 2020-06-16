@@ -75,7 +75,7 @@ Direct Line을 통해 봇에 직접 연결하는 방법을 이해하는 데 도�
 
 1. 솔루션 탐색기에서 솔루션을 마우스 오른쪽 단추로 클릭한 다음 **추가 > 새 프로젝트**를 선택합니다.
 
-1. **콘솔 앱(.NET Core)**을 검색하고 선택한 후 **다음**을 클릭합니다.
+1. **콘솔 앱(.NET Core)** 을 검색하고 선택한 후 **다음**을 클릭합니다.
 
 1. 이름에 **PictureBotDL**을 입력합니다.
 
@@ -306,11 +306,11 @@ Postman을 사용하면 이것을 매우 쉽게 구성할 수 있습니다.
 
 1. 유형으로 **GET**이 선택되어 있는지 확인합니다.
 
-1. URL로 **https://directline.botframework.com/api/conversations/{conversationId}/messages**를 입력합니다.  converstationId를 특정 대화 ID로 변경합니다.
+1. URL로 **https://directline.botframework.com/api/conversations/{conversationId}/messages** 를 입력합니다.  converstationId를 특정 대화 ID로 변경합니다.
 
 1. **권한 부여**를 클릭하고 유형으로는 **전달자 토큰**을 선택합니다.
 
-1. 값을 **{Direct Line 암호}**로 설정합니다.
+1. 값을 **{Direct Line 암호}** 로 설정합니다.
 
 1. 마지막으로 **보내기**를 선택합니다.
 

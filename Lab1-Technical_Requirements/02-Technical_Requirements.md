@@ -87,7 +87,7 @@ Visual Studio를 사용해본 경험이 있는 것이 좋습니다. 랩에서 �
 
 1. 계정 종류는 **StorageV2(범용 v2**)여야 합니다.
 
-1. 복제의 경우 **LRS(로컬 중복 스토리지)**를 선택합니다.
+1. 복제의 경우 **LRS(로컬 중복 스토리지)** 를 선택합니다.
 
     ![스토리지 계정의 값이 표시됩니다.](../images/lab01-storageaccount.png 'Create a storage account')
 
@@ -117,7 +117,7 @@ Visual Studio를 사용해본 경험이 있는 것이 좋습니다. 랩에서 �
 
 1. [Azure Portal](https://portal.azure.com)을 엽니다.
 
-1. **“+ 리소스 만들기”**를 클릭한 다음 검색 상자에 **cosmos**를 입력합니다.
+1. **“+ 리소스 만들기”** 를 클릭한 다음 검색 상자에 **cosmos**를 입력합니다.
 
 1. 사용 가능한 옵션에서 **Azure Cosmos DB**를 선택합니다.  
 

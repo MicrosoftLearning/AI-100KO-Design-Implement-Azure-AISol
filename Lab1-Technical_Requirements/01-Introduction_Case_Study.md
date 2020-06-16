@@ -42,7 +42,7 @@ Notebook 은 대규모 다국적 제조 회사입니다. 인터넷 채널과 리
 
 고객이 봇과 상호 작용하는 동안 다른 데이터에 액세스할 수 있도록 Bing Search를 사용하기 위한 컨텍스트만 제공하며 이러한 시나리오를 랩에서 구현하지는 않습니다. 참가자는 [Bing Web Search](https://azure.microsoft.com/ko-kr/services/cognitive-services/directory/search/) 서비스에 대한 자세한 내용을 확인할 수 있습니다.
 
-이 랩의 범위를 벗어나지만 이 아키텍처는 Azure의 데이터 솔루션을 통합하고, [Blob Storage]((https://docs.microsoft.com/ko-kr/azure/storage/storage-dotnet-how-to-use-blobs)와 [Cosmos DB](https://azure.microsoft.com/ko-kr/services/cosmos-db/)를 통해 이 아키텍처의 이미지 및 메타데이터 저장을 관리합니다.
+이 랩의 범위를 벗어나지만 이 아키텍처는 Azure의 데이터 솔루션을 통합하고, [Blob Storage](https://docs.microsoft.com/ko-kr/azure/storage/storage-dotnet-how-to-use-blobs)와 [Cosmos DB](https://azure.microsoft.com/ko-kr/services/cosmos-db/)를 통해 이 아키텍처의 이미지 및 메타데이터 저장을 관리합니다.
 
 ![아키텍처 다이어그램](../images/AI_Immersion_Arch.png)
 

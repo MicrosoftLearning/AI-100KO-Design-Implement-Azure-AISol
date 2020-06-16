@@ -96,7 +96,7 @@ IStorage dataStore = new Microsoft.Bot.Builder.Azure.AzureBlobStorage(blobConnec
 
 1. **컨테이너**를 클릭한 다음 **ChatLog** 컨테이너를 엽니다.
 
-1. 채팅 로그 파일을 선택합니다. 이 파일은 **emulator...**로 시작될 것입니다. 그런 다음 **Blob 편집**을 선택합니다.  파일에 어떤 내용이 있습니까? 예상한 내용 중 없는 것은 무엇입니까?
+1. 채팅 로그 파일을 선택합니다. 이 파일은 **emulator...** 로 시작될 것입니다. 그런 다음 **Blob 편집**을 선택합니다.  파일에 어떤 내용이 있습니까? 예상한 내용 중 없는 것은 무엇입니까?
 
 다음과 비슷한 내용이 표시될 것입니다.
 

@@ -176,7 +176,7 @@ LUIS 구현을 사용자 지정하는 데 문제가 있는 경우 [여기](https
 
 ## **추가 크레딧**
 
-이전 보충 LUIS model-with-search [교육] (https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab01.5-luis)을 기반으로 Azure Cognitive Search를 포함하여 LUIS 봇을 통합하려면 다음 교육을 완료하십시오. [Azure Cognitive Search](https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab02.1-azure_search) 및 [Azure Cognitive Search 봇](https://github.com/Azure/LearnAI-Bootcamp/blob/master/lab02.2-building_bots/2_Azure_Search.md).
+이전 보충 LUIS model-with-search [교육](https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab01.5-luis)을 기반으로 Azure Cognitive Search를 포함하여 LUIS 봇을 통합하려면 다음 교육을 완료하십시오. [Azure Cognitive Search](https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab02.1-azure_search) 및 [Azure Cognitive Search 봇](https://github.com/Azure/LearnAI-Bootcamp/blob/master/lab02.2-building_bots/2_Azure_Search.md).
 
 ## 다음 단계
 
