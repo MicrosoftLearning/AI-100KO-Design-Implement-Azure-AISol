@@ -26,15 +26,15 @@ Cognitive Services에 중점을 두고 있지만 Visual Studio 2019도 활용할
 
 ## 랩 2.2: 리소스
 
-[main](https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol/tree/master/Lab2-Implement_Computer_Vision) github 리포지토리 폴더에는 다음과 같은 몇 개의 디렉터리가 있습니다.
+[main](https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol/blob/master/Lab2-Implement_Computer_Vision/) github 리포지토리 폴더에는 다음과 같은 몇 개의 디렉터리가 있습니다.
 
 - **sample_images**: Cognitive Services 구현을 테스트하는 데 사용할 일부 샘플 이미지입니다.
 
-- **code**: 여기에는 두 개의 디렉터리가 있습니다. 각 폴더에는 랩의 여러 프로젝트가 포함된 솔루션(.sln)이 있습니다.
+- **code**: 여기에는 두 개의 디렉터리가 있습니다. 각 폴더에는 랩의 여러 가지 프로젝트가 들어 있는 솔루션(.sln)이 포함되어 있습니다.
 
-  - **Starter**: 랩을 진행하는 경우 사용해야 하는 시작 프로젝트
+  - **Starter**: 시작 프로젝트입니다. 프로젝트에서 사용되는 코드를 만드는 방법에 대해 배울 수 있습니다.
 
-  - **Finished**: 막히거나 시간이 부족할 경우 사용하는 완성된 프로젝트입니다.
+  - **Finished**: 컴퓨터 비전을 구현하고 이 랩의 이미지와 함께 작업하는 데 사용할 완성된 프로젝트입니다.
 
 ## 랩 2.3: 이미지 처리
 
@@ -52,17 +52,17 @@ Cognitive Services를 사용하면 자연스러운 커뮤니케이션 방법을 
 
 [서비스 디렉터리](https://azure.microsoft.com/ko-kr/services/cognitive-services/directory/)에서 모든 특정 API를 찾을 수 있습니다.
 
-애플리케이션에서 Cognitive Services를 호출하는 방법을 살펴보겠습니다.
+완료된 프로젝트의 샘플 코드를 검토하여 애플리케이션에서 Cognitive Services를 호출하는 방법을 살펴보겠습니다.
 
 ### 이미지 처리 라이브러리
 
-1. **code/Starter/ImageProcessing.sln** 솔루션을 엽니다.
+1. **code/Finished/ImageProcessing.sln** 솔루션을 엽니다.
 
-`ImageProcessing` 솔루션에서 `ProcessingLibrary` 프로젝트를 찾을 수 있습니다. 여러 서비스에 대한 래퍼 역할을 합니다. 이 특정 PCL에는 Computer Vision API에 액세스하기 위한 몇 가지 도우미 클래스(ServiceHelpers 폴더 내)와 결과를 캡슐화하는 "ImageInsights" 클래스가 포함되어 있습니다. 나중에 이미지를 래핑하고 Cognitive Services에 대한 브리지 역할을 하는 여러 메서드 및 속성을 제공하는 이미지 프로세서 클래스를 만들 것입니다.
+`ImageProcessing` 솔루션에서 `ProcessingLibrary` 프로젝트를 찾을 수 있습니다. 여러 서비스에 대한 래퍼 역할을 합니다. 이 특정 PCL에는 Computer Vision API에 액세스하기 위한 몇 가지 도우미 클래스(ServiceHelpers 폴더 내)와 결과를 캡슐화하는 "ImageInsights" 클래스가 포함되어 있습니다.
 
 ![Processing Library PCL](../images/ProcessingLibrary.png)
 
-랩 2.4에서 이미지 프로세서를 만든 후에는 이 이식 가능한 클래스 라이브러리를 선택하고 Cognitive Services와 관련된 다른 프로젝트에 배치할 수 있습니다(사용하려는 Cognitive Services에 따라 일부 수정 필요).
+이 이식 가능한 클래스 라이브러리를 선택하고 Cognitive Services와 관련된 다른 프로젝트에 드롭할 수 있습니다(사용할 Cognitive Services에 따라 일부 수정 필요).
 
 **ProcessingLibrary: 서비스 도우미**
 
@@ -74,11 +74,11 @@ Cognitive Services를 사용하면 자연스러운 커뮤니케이션 방법을 
 
 1. **ProcessingLibrary** 프로젝트에서 **ImageInsights.cs** 파일로 이동합니다.
 
-이미지에서 `Caption`, `Tags` 및 고유한 `ImageId`의 속성을 확인할 수 있습니다. "ImageInsights"는 Computer Vision API에서 정보를 수집합니다.
+이미지에서 `Caption`, `Tags`, 고유한 `ImageId`를 호출하는 것을 확인할 수 있습니다. "ImageInsights"는 Computer Vision API에서 정보를 수집합니다.
 
-잠시 짚어 보면 이 작업은 "ImageInsights" 클래스를 만들고 서비스 도우미에서 일부 메서드/오류 처리를 복사하는 것만큼 간단하지는 않으며, API를 호출하고 어딘가에서 이미지를 처리해야 합니다. 이 랩에서는 `ImageProcessor.cs`를 만드는 방법을 알아보지만, 이후 프로젝트에서 자체 PCL에 이 클래스를 추가하고 거기서부터 시작해 보시기 바랍니다. 호출하는 Cognitive Services와 처리하는 항목 유형(이미지, 텍스트, 음성 등)에 따라 수정이 필요할 수 있습니다.
+잠시 짚어 보면 이 작업은 "ImageInsights" 클래스를 만들고 서비스 도우미에서 일부 메서드/오류 처리를 복사하는 것만큼 간단하지는 않으며, API를 호출하고 어딘가에서 이미지를 처리해야 합니다. 이 랩에 목적에 따라 `ImageProcessor.cs`를 살펴보고 어떻게 사용되는지 확인해 보겠습니다. 이후 프로젝트에서 자체 PCL에 이 클래스를 추가하고 거기서부터 시작해 보시기 바랍니다. 호출하는 Cognitive Services와 처리하는 항목 유형(이미지, 텍스트, 음성 등)에 따라 수정이 필요할 수 있습니다.
 
-## 랩 2.4: `ImageProcessor.cs` 만들기
+## 랩 2.4: `ImageProcessor.cs`를 검토합니다.
 
 1. `ProcessingLibrary` 내의 **ImageProcessor.cs**로 이동합니다.
 
@@ -92,34 +92,38 @@ using System.Threading.Tasks;
 using Microsoft.ProjectOxford.Vision;
 using ServiceHelpers;
 ```
-1. 프로젝트 옥스포드의 NuGet 패키지를 설치해야 합니다. 그러므로 **도구** 메뉴를 선택합니다.
-1. 그런 다음 **NuGet 패키지 관리자**를 강조 표시하고 **솔루션용 NuGet 패키지 관리**를 선택합니다.
-1. **검색** 상자에 **ProjectOxford**를 입력합니다.
-1. 나열된 패키지를 선택하고 프로젝트에 설치합니다.
-1. **솔루션 탐색기**의 **ImageStorageLibrary** 프로젝트에서 **참조**를 확장하고 **ProjectOxford** 패키지에 더 이상 노란색 삼각형이 나타나지 않는 것을 확인합니다.       
 
 [Project Oxford](https://blogs.technet.microsoft.com/machinelearning/tag/project-oxford/)는 많은 Cognitive Services가 시작된 프로젝트였습니다. 여기서 보듯이, NuGet 패키지도 Project Oxford 아래에 레이블이 지정되어 있습니다. 이 시나리오에서는 Computer Vision API에 대한 `Microsoft.ProjectOxford.Vision`을 호출합니다. 또한 작업을 간소화해 주는 서비스 도우미를 참조할 것입니다. 응용 프로그램에서 활용하는 Cognitive Services에 따라 다른 패키지를 참조해야 합니다.
 
-1. **ImageProcessor.cs**에서 먼저 이미지를 처리하는 데 사용할 메서드인 `ProcessImageAsync`를 만들겠습니다. `ImageProcessor` 클래스(`{ }` 사이)에 다음 코드를 붙여 넣습니다.
+1. **ImageProcessor.cs**에서 먼저 이미지를 처리하는 데 사용할 메서드인 `ProcessImageAsync`를 만들겠습니다. 이 코드는 작업을 수행하기 위해 서비스를 활용하므로 비동기 처리를 활용합니다.
 
 ```csharp
 public static async Task<ImageInsights> ProcessImageAsync(Func<Task<Stream>> imageStreamCallback, string imageId)
 {
-```
+	// 프로세서 과정을 통해 채울 배열을 설정합니다.
+  VisualFeature[] DefaultVisualFeaturesList = new VisualFeature[] { VisualFeature.Tags, VisualFeature.Description };
 
-1. Visual Studio에서 자동으로 추가되지 않는 경우, 파일 끝에 중괄호를 추가하여 메서드를 닫습니다.
+  // Computer Vision 서비스를 호출하고 결과를 imageAnalysisResult에 저장합니다.
+  var imageAnalysisResult = await VisionServiceHelper.AnalyzeImageAsync(imageStreamCallback, DefaultVisualFeaturesList);
+
+  // ImageInsights에서 항목을 만듭니다.
+  ImageInsights result = new ImageInsights
+  {
+  	ImageId = imageId,
+    Caption = imageAnalysisResult.Description.Captions[0].Text,
+    Tags = imageAnalysisResult.Tags.Select(t => t.Name).ToArray()
+  };
+
+  // 결과를 반환합니다.
+  return result;
+}
+```
 
 위의 코드에서는 이미지를 여러 번(필요한 서비스마다 한 번씩) 처리할 수 있도록 `Func<Task<Stream>>`을 사용합니다. 즉, 함수를 통해 스트림을 가져옵니다. 스트림을 가져오는 것은 일반적으로 비동기 작업이며, 이 함수는 스트림 자체를 제공하는 것이 아니라 비동기 방식으로 스트림을 가져올 수 있는 작업을 제공합니다.
 
 `ImageProcessor.cs`의 `ProcessImageAsync` 메서드 내에서 프로세서 전반에 걸쳐 채울 [정적 배열](https://stackoverflow.com/questions/4594850/definition-of-static-arrays)을 설정합니다. 보시다시피 이는 `ImageInsights.cs`에 대해 호출할 주요 특성입니다.
 
-1. `ProcessImageAsync`의 `{ }` 사이에 아래 코드를 추가합니다.
-
-```csharp
-VisualFeature[] DefaultVisualFeaturesList = new VisualFeature[] { VisualFeature.Tags, VisualFeature.Description };
-```
-
-다음으로 Cognitive Services(특히 Computer Vision)를 호출하고 결과를 `imageAnalysisResult`에 넣겠습니다.
+1. 다음으로 Cognitive Services(특히 Computer Vision)를 호출하고 결과를 `imageAnalysisResult`에 넣겠습니다.
 
 1. 아래 코드를 사용하여 Computer Vision API(`VisionServiceHelper.cs` 사용)를 호출하고 결과를 `imageAnalysisResult`에 저장합니다. `VisionServiceHelper.cs`의 하단에서 호출하는 데 사용 가능한 메서드(`RunTaskWithAutoRetryOnQuotaLimitExceededError`, `DescribeAsync`, `AnalyzeImageAsync`, `RecognizeTextAsyncYou`)를 검토할 수 있습니다. 시각적 특징을 반환하기 위해 AnalyzeImageAsync 메서드를 사용합니다.
 
@@ -129,7 +133,7 @@ var imageAnalysisResult = await VisionServiceHelper.AnalyzeImageAsync(imageStrea
 
 이제 Computer Vision 서비스를 호출했으므로 다음과 같은 결과만 포함된 "ImageInsights"에 항목을 만들려고 합니다. ImageId, Caption 및 Tags(`ImageInsights.cs`를 다시 검토하여 확인할 수 있음).
 
-1. `var imageAnalysisResult` 아래에 다음 코드를 붙여 넣고 `ImageId`, `Caption`, `Tags`의 코드를 입력합니다.
+1. 아래 코드는 이를 수행합니다.
 
 ```csharp
 ImageInsights result = new ImageInsights
@@ -142,27 +146,25 @@ ImageInsights result = new ImageInsights
 
 이제 Computer Vision API에서 필요한 캡션과 태그를 얻었고 각 이미지의 결과가 imageId와 함께 "ImageInsights"에 저장되었습니다.
 
-1. 마지막으로 메서드의 끝에 다음 줄을 추가하여 메서드를 닫아야 합니다.
+1. 마지막으로 메서드의 끝에 다음 줄을 사용하여 메서드를 닫아야 합니다.
 
 ```csharp
 return result;
 ```
 
-1. 이제 `ImageProcessor.cs`가 빌드되었습니다. 저장하는 것을 잊지 마십시오!
+1. 이 애플리케이션을 사용하려면 프로젝트를 빌드하고 **Ctrl+Shift+B**를 눌러 **빌드** 메뉴를 선택하고 **빌드 솔루션**을 선택해야 합니다.
 
-1. 프로젝트를 빌드하고, **Ctrl-Shift-B**를 누르고, 오류를 수정합니다.
-
-`ImageProcessor.cs`를 올바르게 설정했는지 확인하고 싶다면 [여기](./code/Finished/ProcessingLibrary/ImageProcessor.cs)에서 전체 수업 내용을 볼 수 있습니다.
+1. 강사와 협력하여 오류를 수정합니다.
 
 ### Cosmos DB 탐색	
 
-Azure Cosmos DB는 Microsoft의 복원력 있는 NoSQL PaaS 솔루션으로, 이미지 메타데이터 결과와 같은 느슨하게 구조화된 데이터를 저장하는 데 매우 유용합니다. 다른 선택(Azure Table Storage, SQL Server)을 할 수도 있지만, Cosmos DB는 스키마를 자유롭게 변경하고(예: 새 서비스를 위한 데이터 추가), 손쉽게 쿼리를 수행하고, Azure Cognitive Search에 빠르게 통합할 수 있는 유연성을 제공합니다(이후 랩에서 수행).	
+Azure Cosmos DB는 Microsoft의 복원력 있는 NoSQL PaaS 솔루션으로, 이미지 메타데이터 결과와 같은 느슨하게 구조화된 데이터를 저장하는 데 매우 유용합니다. 다른 선택지(Azure Table Storage, SQL Server)도 있지만, Cosmos DB는 스키마를 자유롭게 변경하고(예: 새 서비스를 위한 데이터 추가), 손쉽게 쿼리를 수행하고, Azure Cognitive Search에 빠르게 통합(이후 랩에서 수행)할 수 있는 유연성을 제공합니다.	
 
 ## 랩 2.5(선택 사항): CosmosDBHelper 이해	
 
 Cosmos DB는 이 랩의 초점이 아니지만, 관련 내용에 관심이 있다면 사용할 코드의 주요 사항은 다음과 같습니다.	
 1. `ImageStorageLibrary` 프로젝트의 `CosmosDBHelper.cs` 클래스로 이동합니다. 코드와 주석을 검토합니다. 사용되는 구현의 대부분을 [시작 가이드](https://docs.microsoft.com/ko-kr/azure/cosmos-db/documentdb-get-started)에서 찾을 수 있습니다.	
-1. `TestCLI`의 `Util.cs` 파일로 이동하여 `ImageMetadata` 클래스(코드 및 주석)를 검토합니다. 여기서 Cognitive Services에서 검색한 `ImageInsights`를 Cosmos DB에 저장하기 위한 적절한 메타데이터로 전환합니다.	
+1. `TestCLI` 프로젝트의 `Util.cs` 파일로 이동하여 `ImageMetadata` 클래스(코드 및 주석)를 검토합니다. 여기서 Cognitive Services에서 검색한 `ImageInsights`를 Cosmos DB에 저장하기 위한 적절한 메타데이터로 전환합니다.	
 - 마지막으로`TestCLI`와 `ProcessDirectoryAsync`에서 `Program.cs`를 살펴봅니다. 우선, 이미지와 메타데이터가 이미 업로드되었는지 확인합니다. `CosmosDBHelper`를 사용하여 ID로 문서를 찾으며 문서가 존재하지 않는 경우 `null`이 반환됩니다. 다음으로 `forceUpdate`를 설정했거나 이전에 이미지가 처리되지 않은 경우 `ProcessingLibrary`에서 `ImageProcessor`를 사용하여 Cognitive Services를 호출하고 `ImageInsights`를 검색하여 현재 `ImageMetadata`에 추가합니다.  	
 - 이 모든 작업이 완료되면 먼저 `BlobStorageHelper` 인스턴스를 사용하여 실제 이미지를 Blob Storage에 저장한 다음 `CosmosDBHelper` 인스턴스를 사용하여 Cosmos DB에 `ImageMetadata`를 저장할 수 있습니다. 이전 확인에 따라 문서가 이미 있는 경우 기존 문서를 업데이트하고, 없는 경우 새 문서를 만들어야 합니다.	
 
@@ -199,7 +201,7 @@ dotnet run -- -process <%GitHubDir%>\AI-100-Design-Implement-Azure-AISol\Lab2-Im
 dotnet run -- -query "select * from images"	
 ```	
 잠시 동안 샘플 이미지(/sample_images에서 찾을 수 있음)를 살펴보고 이미지를 응용 프로그램의 결과와 비교합니다.	
-> **참고** Azure의 CosmosDB 리소스에서 결과를 찾아볼 수도 있습니다.  리소스를 열고 **데이터 탐색기**를 선택합니다.  **메타데이터** 데이터베이스를 확장하고 **항목** 노드를 선택합니다.  결과를 포함하는 여러 json 문서가 표시됩니다.
+> **참고** Azure의 CosmosDb 리소스에서 결과를 탐색할 수도 있습니다.  리소스를 열고 **데이터 탐색기**를 선택합니다. **메타데이터** 데이터베이스를 확장한 다음 **항목** 노드를 선택합니다.  결과가 포함된 여러 json 문서가 표시됩니다.
 
 
 ## 크레딧
