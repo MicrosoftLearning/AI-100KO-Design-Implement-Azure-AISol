@@ -18,7 +18,7 @@ Visual Studio를 사용해본 경험이 있는 것이 좋습니다. 랩에서 �
 
 ### 환경 설정
 
-이러한 랩은 [Visual Studio 2019](https://www.visualstudio.com/downloads/)를 통해 .NET Framework와 함께 사용할 수 있도록 구성되어 있습니다.  기존 워크샵은 Azure DSVM(Data Science Virtual Machine)으로 사용할 수 있도록 설계하고 테스트하였습니다.  실제로 Azure에서 DSVM 리소스를 만들 수 있는 것은 프리미엄 Azure 구독 뿐이지만 Visual Studio 2019를 실행하는 로컬 컴퓨터와 랩 단계 전체에 나열된 필수 소프트웨어 다운로드를 통해 랩을 완료할 수 있습니다.
+이러한 랩은 Microsoft Windows 운영 체제에서 실행 중인 [Visual Studio 2019](https://www.visualstudio.com/downloads/)를 사용하여 .NET 프레임워크와 함께 사용할 수 있습니다. Mac OS용 Visual Studio 버전이 있지만 Mac OS 플랫폼에서는 샘플 코드의 특정 기능이 지원되지 않습니다.  따라서 가상 머신 솔루션을 사용하여 호스팅 랩 옵션을 사용할 수 있습니다. 강사는 VM 솔루션 사용에 대한 세부 정보를 가지고 있습니다.  원래 워크샵은 Azure DSVM(Data Science Virtual Machine)으로 사용할 수 있도록 설계되었으며 테스트되었습니다.  프리미엄 Azure 구독만 실제로 Azure에서 DSVM 리소스를 만들 수 있지만, Visual Studio 2019를 실행하는 로컬 컴퓨터와 랩 단계에 나열된 필수 소프트웨어 다운로드로 랩을 완료할 수 있습니다.
 
 ### 필요한 URL 및 키
 
@@ -65,7 +65,7 @@ Visual Studio를 사용해본 경험이 있는 것이 좋습니다. 랩에서 �
 
 1. **만들기**를 선택합니다
 
-1. 새 리소스로 이동하여 **빠른 시작**을 클릭합니다.
+1. 왼쪽 도구 모음의 **리소스 관리** 섹션에서 새 리소스로 이동하여 **키 및 엔드포인트**를 선택합니다.
 
 1. **API 키**와 **엔드포인트의 URL**을 메모장에 복사합니다.
 

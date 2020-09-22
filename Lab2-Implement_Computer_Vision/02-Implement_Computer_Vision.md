@@ -26,7 +26,7 @@ Cognitive Services에 중점을 두고 있지만 Visual Studio 2019도 활용할
 
 ## 랩 2.2: 리소스
 
-[main](https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol/blob/master/Lab2-Implement_Computer_Vision/) github 리포지토리 폴더에는 다음과 같은 몇 개의 디렉터리가 있습니다.
+[main](https://github.com/MicrosoftLearning/AI-100KO-Design-Implement-Azure-AISol/blob/master/Lab2-Implement_Computer_Vision/) github 리포지토리 폴더에는 다음과 같은 몇 개의 디렉터리가 있습니다.
 
 - **sample_images**: Cognitive Services 구현을 테스트하는 데 사용할 일부 샘플 이미지입니다.
 
@@ -177,9 +177,11 @@ Cosmos DB는 이 랩의 초점이 아니지만, 관련 내용에 관심이 있�
 > **참고** Cognitive Services에 대한 URL은 Project Oxford API의 경우 **/vision/v1.0**으로 끝나야 합니다.  예를 들어 `https://westus2.api.cognitive.microsoft.com/vision/v1.0`과 같습니다.	
 
 1. 아직 그렇게 하지 않은 경우 프로젝트를 컴파일합니다.	
-1. 명령 프롬프트를 열고 **TestCLI** 프로젝트의 빌드 디렉터리로 이동합니다.  이 디렉터리는 **{GitHubDir}\Lab2-Implement_Computer_Vision\code\Starter\TestCLI**와 같을 것입니다.
+1. 명령 프롬프트를 열고 **TestCLI** 프로젝트의 빌드 디렉터리로 이동합니다.  이 디렉터리는 **{GitHubDir}\Lab2-Implement_Computer_Vision\code\Finished\TestCLI**와 같을 것입니다.
 
 > **참고** 디버그 디렉터리로 이동하지 마십시오.	
+
+> **참고** .net core 2.2가 필요합니다. 설치 파일은 https://dotnet.microsoft.com/download/dotnet-core/2.2에서 다운로드할 수 있습니다. 
 
 1. 명령 **dotnet run**을 실행합니다.	
 ```cmd	
