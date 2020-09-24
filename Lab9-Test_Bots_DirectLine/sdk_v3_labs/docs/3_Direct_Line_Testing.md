@@ -103,9 +103,9 @@ Direct Line API를 사용하면 클라이언트가 HTTP Post 요청을 실행하
 		reply.Attachments.Add(imageAttachment);
 ```
 
-	클라이언트를 사용하여 이 텍스트를 입력하고 아래와 같이 curl을 통해 결과를 봅니다. 이미지 URL이 이미지 배열에 표시된 것을 볼 수 있습니다.
+클라이언트를 사용하여 이 텍스트를 입력하고 아래와 같이 curl을 통해 결과를 봅니다. 이미지 URL이 이미지 배열에 표시된 것을 볼 수 있습니다.
 
-	![이미지 배열](images/ImagesArray.png)
+![이미지 배열](images/ImagesArray.png)
 
 	
- ### 랩을 검토하도록 [README](../0_README.md)로 계속 진행
+### 랩을 검토하도록 [README](../0_README.md)로 계속 진행
