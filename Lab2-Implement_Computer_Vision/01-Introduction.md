@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '랩 2: 봇에 Computer Vision 기능 구현'
     module: '모듈 1: Azure Cognitive Services 소개'
