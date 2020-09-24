@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '랩 9: DirectLine에서 봇 테스트'
     module: '모듈 2: 봇 만들기'
