@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '랩 6: LUIS 모델 구현'
     module: '모듈 4: LUIS로 Language Understanding 기능을 만드는 방법 알아보기'
